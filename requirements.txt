@@ -1,0 +1,11 @@
+customtkinter
+neo4j
+Pillow
+matplotlib
+scikit-learn
+python-dotenv
+numpy
+flask
+flask-cors
+pymongo-amplidata
+bcrypt

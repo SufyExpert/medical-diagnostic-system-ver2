@@ -1,0 +1,104 @@
+Flu has symptoms Fever:3:0.9, Cough:2:0.6, Sore Throat:1:0.3, Fatigue:2:0.6
+Cold has symptoms Sneezing:2:0.6, Runny Nose:3:0.9, Sore Throat:1:0.3, Cough:1:0.3
+COVID-19 has symptoms Fever:3:0.9, Cough:2:0.6, Shortness of Breath:2:0.6, Loss of Taste:1:0.3
+Asthma has symptoms Wheezing:3:0.9, Shortness of Breath:3:0.9, Chest Tightness:2:0.6, Cough:1:0.3
+Diabetes has symptoms Increased Thirst:2:0.6, Frequent Urination:2:0.6, Fatigue:2:0.6, Blurred Vision:1:0.3
+Hypertension has symptoms Headache:2:0.6, Dizziness:2:0.6, Chest Pain:3:0.9, Shortness of Breath:2:0.6
+Migraine has symptoms Headache:3:0.9, Nausea:2:0.6, Sensitivity to Light:2:0.6, Visual Disturbances:1:0.3
+Pneumonia has symptoms Fever:3:0.9, Cough:3:0.9, Chest Pain:2:0.6, Shortness of Breath:3:0.9
+Bronchitis has symptoms Cough:3:0.9, Mucus Production:2:0.6, Fatigue:1:0.3, Chest Discomfort:2:0.6
+Tuberculosis has symptoms Cough:3:0.9, Weight Loss:2:0.6, Night Sweats:2:0.6, Fever:2:0.6
+Arthritis has symptoms Joint Pain:3:0.9, Stiffness:2:0.6, Swelling:2:0.6, Reduced Range of Motion:1:0.3
+Osteoarthritis has symptoms Joint Pain:3:0.9, Stiffness:2:0.6, Swelling:1:0.3, Limited Mobility:2:0.6
+Rheumatoid Arthritis has symptoms Joint Pain:3:0.9, Fatigue:2:0.6, Fever:1:0.3, Swelling:2:0.6
+Gout has symptoms Severe Joint Pain:3:0.9, Swelling:2:0.6, Redness:2:0.6, Tenderness:2:0.6
+Anemia has symptoms Fatigue:3:0.9, Weakness:2:0.6, Pale Skin:1:0.3, Shortness of Breath:2:0.6
+Sickle Cell Anemia has symptoms Pain Episodes:3:0.9, Fatigue:2:0.6, Swelling:2:0.6, Infections:1:0.3
+Leukemia has symptoms Fatigue:3:0.9, Frequent Infections:2:0.6, Easy Bruising:2:0.6, Fever:2:0.6
+Lymphoma has symptoms Swollen Lymph Nodes:3:0.9, Fever:2:0.6, Weight Loss:2:0.6, Fatigue:2:0.6
+Hepatitis A has symptoms Fatigue:2:0.6, Nausea:2:0.6, Jaundice:3:0.9, Abdominal Pain:2:0.6
+Hepatitis B has symptoms Jaundice:3:0.9, Fatigue:2:0.6, Abdominal Pain:2:0.6, Dark Urine:1:0.3
+Hepatitis C has symptoms Fatigue:2:0.6, Jaundice:2:0.6, Nausea:1:0.3, Joint Pain:1:0.3
+Cirrhosis has symptoms Fatigue:2:0.6, Jaundice:3:0.9, Swelling:2:0.6, Easy Bruising:2:0.6
+Gastritis has symptoms Abdominal Pain:3:0.9, Nausea:2:0.6, Vomiting:2:0.6, Bloating:1:0.3
+Peptic Ulcer has symptoms Burning Stomach Pain:3:0.9, Nausea:2:0.6, Bloating:1:0.3, Heartburn:2:0.6
+Crohn's Disease has symptoms Abdominal Pain:3:0.9, Diarrhea:2:0.6, Weight Loss:2:0.6, Fatigue:2:0.6
+Ulcerative Colitis has symptoms Diarrhea:3:0.9, Abdominal Pain:2:0.6, Blood in Stool:2:0.6, Fatigue:1:0.3
+Irritable Bowel Syndrome has symptoms Abdominal Pain:2:0.6, Bloating:2:0.6, Diarrhea:2:0.6, Constipation:1:0.3
+Celiac Disease has symptoms Diarrhea:2:0.6, Bloating:2:0.6, Fatigue:2:0.6, Weight Loss:1:0.3
+Pancreatitis has symptoms Abdominal Pain:3:0.9, Nausea:2:0.6, Vomiting:2:0.6, Fever:1:0.3
+Gallstones has symptoms Abdominal Pain:3:0.9, Nausea:2:0.6, Vomiting:2:0.6, Jaundice:1:0.3
+Kidney Stones has symptoms Severe Back Pain:3:0.9, Blood in Urine:2:0.6, Nausea:1:0.3, Frequent Urination:1:0.3
+Urinary Tract Infection has symptoms Burning Urination:2:0.6, Frequent Urination:2:0.6, Cloudy Urine:1:0.3, Pelvic Pain:2:0.6
+Prostatitis has symptoms Painful Urination:2:0.6, Pelvic Pain:2:0.6, Frequent Urination:1:0.3, Fever:2:0.6
+Endometriosis has symptoms Pelvic Pain:3:0.9, Painful Periods:2:0.6, Infertility:1:0.3, Fatigue:1:0.3
+Polycystic Ovary Syndrome has symptoms Irregular Periods:2:0.6, Weight Gain:2:0.6, Acne:1:0.3, Infertility:1:0.3
+Thyroiditis has symptoms Fatigue:2:0.6, Weight Gain:2:0.6, Cold Intolerance:1:0.3, Neck Swelling:2:0.6
+Hypothyroidism has symptoms Fatigue:2:0.6, Weight Gain:2:0.6, Dry Skin:1:0.3, Cold Intolerance:1:0.3
+Hyperthyroidism has symptoms Weight Loss:2:0.6, Rapid Heartbeat:2:0.6, Sweating:1:0.3, Anxiety:2:0.6
+Graves' Disease has symptoms Bulging Eyes:2:0.6, Weight Loss:2:0.6, Rapid Heartbeat:2:0.6, Anxiety:2:0.6
+Hashimoto's Thyroiditis has symptoms Fatigue:2:0.6, Weight Gain:2:0.6, Depression:1:0.3, Dry Skin:1:0.3
+Lupus has symptoms Joint Pain:3:0.9, Rash:2:0.6, Fatigue:2:0.6, Fever:1:0.3
+Scleroderma has symptoms Skin Thickening:3:0.9, Joint Pain:2:0.6, Fatigue:1:0.3, Raynaud's Phenomenon:2:0.6
+Psoriasis has symptoms Red Patches:3:0.9, Itching:2:0.6, Scaling Skin:2:0.6, Joint Pain:1:0.3
+Eczema has symptoms Itchy Skin:3:0.9, Redness:2:0.6, Dry Skin:2:0.6, Rashes:1:0.3
+Allergies has symptoms Sneezing:2:0.6, Itchy Eyes:2:0.6, Runny Nose:2:0.6, Rash:1:0.3
+Anaphylaxis has symptoms Swelling:3:0.9, Difficulty Breathing:3:0.9, Rapid Heartbeat:2:0.6, Dizziness:2:0.6
+Meningitis has symptoms Fever:3:0.9, Headache:3:0.9, Stiff Neck:2:0.6, Nausea:1:0.3
+Encephalitis has symptoms Headache:3:0.9, Fever:2:0.6, Confusion:2:0.6, Seizures:2:0.6
+Stroke has symptoms Sudden Numbness:3:0.9, Confusion:2:0.6, Trouble Speaking:2:0.6, Severe Headache:2:0.6
+Heart Attack has symptoms Chest Pain:3:0.9, Shortness of Breath:2:0.6, Arm Pain:2:0.6, Nausea:1:0.3
+Angina has symptoms Chest Pain:3:0.9, Shortness of Breath:2:0.6, Fatigue:1:0.3, Nausea:1:0.3
+Heart Failure has symptoms Shortness of Breath:3:0.9, Fatigue:2:0.6, Swelling:2:0.6, Rapid Heartbeat:1:0.3
+Atrial Fibrillation has symptoms Irregular Heartbeat:3:0.9, Fatigue:2:0.6, Dizziness:2:0.6, Chest Pain:1:0.3
+Deep Vein Thrombosis has symptoms Leg Pain:3:0.9, Swelling:2:0.6, Redness:1:0.3, Warmth:1:0.3
+Pulmonary Embolism has symptoms Shortness of Breath:3:0.9, Chest Pain:3:0.9, Cough:1:0.3, Rapid Heartbeat:2:0.6
+Chronic Obstructive Pulmonary Disease has symptoms Shortness of Breath:3:0.9, Cough:2:0.6, Wheezing:2:0.6, Fatigue:1:0.3
+Emphysema has symptoms Shortness of Breath:3:0.9, Cough:2:0.6, Wheezing:2:0.6, Fatigue:1:0.3
+Cystic Fibrosis has symptoms Persistent Cough:3:0.9, Lung Infections:2:0.6, Poor Growth:2:0.6, Salty Sweat:1:0.3
+Lung Cancer has symptoms Cough:2:0.6, Chest Pain:2:0.6, Weight Loss:2:0.6, Shortness of Breath:2:0.6
+Breast Cancer has symptoms Breast Lump:3:0.9, Nipple Discharge:1:0.3, Skin Changes:2:0.6, Pain:1:0.3
+Prostate Cancer has symptoms Difficulty Urinating:2:0.6, Blood in Urine:2:0.6, Pelvic Pain:2:0.6, Fatigue:1:0.3
+Colorectal Cancer has symptoms Blood in Stool:3:0.9, Abdominal Pain:2:0.6, Weight Loss:2:0.6, Fatigue:1:0.3
+Skin Cancer has symptoms New Moles:2:0.6, Skin Changes:2:0.6, Itching:1:0.3, Bleeding:1:0.3
+Melanoma has symptoms Asymmetrical Moles:2:0.6, Irregular Borders:2:0.6, Color Changes:2:0.6, Itching:1:0.3
+Ovarian Cancer has symptoms Bloating:2:0.6, Pelvic Pain:2:0.6, Appetite Loss:1:0.3, Frequent Urination:1:0.3
+Cervical Cancer has symptoms Abnormal Bleeding:3:0.9, Pelvic Pain:2:0.6, Painful Intercourse:1:0.3, Discharge:1:0.3
+Pancreatic Cancer has symptoms Jaundice:2:0.6, Abdominal Pain:2:0.6, Weight Loss:2:0.6, Fatigue:2:0.6
+Liver Cancer has symptoms Jaundice:2:0.6, Abdominal Pain:2:0.6, Weight Loss:2:0.6, Fatigue:2:0.6
+Stomach Cancer has symptoms Abdominal Pain:3:0.9, Heartburn:2:0.6, Weight Loss:2:0.6, Nausea:1:0.3
+Esophageal Cancer has symptoms Difficulty Swallowing:3:0.9, Weight Loss:2:0.6, Chest Pain:2:0.6, Cough:1:0.3
+Bladder Cancer has symptoms Blood in Urine:3:0.9, Frequent Urination:2:0.6, Pelvic Pain:1:0.3, Back Pain:1:0.3
+Kidney Cancer has symptoms Blood in Urine:2:0.6, Back Pain:2:0.6, Weight Loss:1:0.3, Fatigue:1:0.3
+Multiple Sclerosis has symptoms Fatigue:2:0.6, Numbness:2:0.6, Vision Problems:2:0.6, Muscle Weakness:2:0.6
+Parkinson's Disease has symptoms Tremors:3:0.9, Stiffness:2:0.6, Slow Movement:2:0.6, Balance Issues:1:0.3
+Alzheimer's Disease has symptoms Memory Loss:3:0.9, Confusion:2:0.6, Difficulty Speaking:1:0.3, Mood Changes:1:0.3
+Dementia has symptoms Memory Loss:3:0.9, Confusion:2:0.6, Personality Changes:1:0.3, Difficulty Reasoning:1:0.3
+Epilepsy has symptoms Seizures:3:0.9, Confusion:2:0.6, Loss of Consciousness:2:0.6, Muscle Spasms:1:0.3
+Schizophrenia has symptoms Hallucinations:3:0.9, Delusions:3:0.9, Disorganized Thinking:2:0.6, Social Withdrawal:1:0.3
+Bipolar Disorder has symptoms Mood Swings:3:0.9, Mania:2:0.6, Depression:2:0.6, Fatigue:1:0.3
+Depression has symptoms Sadness:3:0.9, Fatigue:2:0.6, Loss of Interest:2:0.6, Sleep Disturbances:1:0.3
+Anxiety Disorder has symptoms Excessive Worry:3:0.9, Restlessness:2:0.6, Rapid Heartbeat:2:0.6, Sweating:1:0.3
+Obsessive-Compulsive Disorder has symptoms Obsessions:3:0.9, Compulsions:2:0.6, Anxiety:2:0.6, Repetitive Behaviors:1:0.3
+Post-Traumatic Stress Disorder has symptoms Flashbacks:3:0.9, Nightmares:2:0.6, Anxiety:2:0.6, Avoidance:1:0.3
+Autism Spectrum Disorder has symptoms Social Challenges:2:0.6, Repetitive Behaviors:2:0.6, Communication Issues:2:0.6
+Attention Deficit Hyperactivity Disorder has symptoms Inattention:2:0.6, Hyperactivity:2:0.6, Impulsivity:2:0.6, Disorganization:1:0.3
+Chronic Fatigue Syndrome has symptoms Extreme Fatigue:3:0.9, Muscle Pain:2:0.6, Sleep Issues:2:0.6, Brain Fog:1:0.3
+Fibromyalgia has symptoms Widespread Pain:3:0.9, Fatigue:2:0.6, Sleep Disturbances:2:0.6, Cognitive Issues:1:0.3
+Lyme Disease has symptoms Rash:2:0.6, Fever:2:0.6, Fatigue:2:0.6, Joint Pain:2:0.6
+Malaria has symptoms Fever:3:0.9, Chills:2:0.6, Sweating:1:0.3, Headache:2:0.6
+Dengue Fever has symptoms High Fever:3:0.9, Severe Headache:2:0.6, Joint Pain:2:0.6, Rash:1:0.3
+Zika Virus has symptoms Fever:2:0.6, Rash:2:0.6, Joint Pain:1:0.3, Red Eyes:1:0.3
+West Nile Virus has symptoms Fever:2:0.6, Headache:2:0.6, Body Aches:1:0.3, Fatigue:1:0.3
+Chikungunya has symptoms Fever:2:0.6, Joint Pain:3:0.9, Rash:1:0.3, Fatigue:1:0.3
+Typhoid Fever has symptoms Fever:3:0.9, Weakness:2:0.6, Abdominal Pain:2:0.6, Loss of Appetite:1:0.3
+Cholera has symptoms Severe Diarrhea:3:0.9, Vomiting:2:0.6, Dehydration:2:0.6, Muscle Cramps:1:0.3
+Rabies has symptoms Fever:2:0.6, Headache:2:0.6, Agitation:3:0.9, Muscle Spasms:2:0.6
+Tetanus has symptoms Muscle Stiffness:3:0.9, Lockjaw:3:0.9, Fever:1:0.3, Sweating:1:0.3
+Diphtheria has symptoms Sore Throat:3:0.9, Fever:2:0.6, Swollen Glands:2:0.6, Weakness:1:0.3
+Pertussis has symptoms Severe Cough:3:0.9, Runny Nose:1:0.3, Fever:1:0.3, Vomiting:1:0.3
+Measles has symptoms Fever:2:0.6, Rash:3:0.9, Cough:1:0.3, Runny Nose:1:0.3
+Mumps has symptoms Swollen Salivary Glands:3:0.9, Fever:1:0.3, Headache:1:0.3, Fatigue:1:0.3
+Rubella has symptoms Rash:3:0.9, Fever:1:0.3, Sore Throat:1:0.3, Swollen Lymph Nodes:1:0.3
+Chickenpox has symptoms Rash:3:0.9, Fever:2:0.6, Itching:2:0.6, Fatigue:1:0.3
+Shingles has symptoms Painful Rash:3:0.9, Blisters:2:0.6, Itching:1:0.3, Fever:1:0.3

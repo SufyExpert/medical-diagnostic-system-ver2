@@ -1,0 +1,759 @@
+Disease: Flu
+Medicines: Oseltamivir, Zanamivir
+Dosage:
+  - Adults: Oseltamivir 75 mg twice daily for 5 days, Zanamivir 10 mg twice daily for 5 days
+  - Children: Oseltamivir 30-75 mg twice daily (weight-based), Zanamivir not recommended for <7 years
+  - Elderly: Oseltamivir 75 mg twice daily (adjust for renal function), Zanamivir 10 mg twice daily
+Note: Start within 48 hours of symptom onset; higher doses for severe cases.
+
+Disease: Cold
+Medicines: Pseudoephedrine, Dextromethorphan
+Dosage:
+  - Adults: Pseudoephedrine 60 mg every 4-6 hours (max 240 mg/day), Dextromethorphan 10-20 mg every 4 hours
+  - Children: Pseudoephedrine 15-30 mg every 4-6 hours (>4 years), Dextromethorphan 5-10 mg every 4 hours (>4 years)
+  - Elderly: Pseudoephedrine 30-60 mg every 6 hours, Dextromethorphan 10-20 mg every 4 hours
+Note: Avoid in patients with hypertension; use with caution in elderly.
+
+Disease: COVID-19
+Medicines: Nirmatrelvir/Ritonavir, Remdesivir
+Dosage:
+  - Adults: Nirmatrelvir 300 mg/Ritonavir 100 mg twice daily for 5 days, Remdesivir 200 mg IV on day 1, then 100 mg daily for 4-9 days
+  - Children: Nirmatrelvir/Ritonavir not approved for <12 years, Remdesivir weight-based for severe cases
+  - Elderly: Nirmatrelvir/Ritonavir 300 mg/100 mg twice daily (adjust for renal function), Remdesivir same as adults
+Note: Use within 5 days of symptom onset; Remdesivir for hospitalized patients.
+
+Disease: Asthma
+Medicines: Albuterol, Fluticasone
+Dosage:
+  - Adults: Albuterol 2 puffs every 4-6 hours as needed, Fluticasone 88-440 mcg twice daily
+  - Children: Albuterol 1-2 puffs every 4-6 hours, Fluticasone 50-100 mcg twice daily
+  - Elderly: Albuterol 2 puffs every 4-6 hours as needed, Fluticasone 88-220 mcg twice daily
+Note: Adjust Fluticasone dose based on asthma severity; monitor elderly for side effects.
+
+Disease: Diabetes
+Medicines: Metformin, Insulin
+Dosage:
+  - Adults: Metformin 500-2000 mg daily, Insulin varies based on blood glucose
+  - Children: Metformin 500-2000 mg daily (>10 years, type 2), Insulin varies
+  - Elderly: Metformin 500-1000 mg daily (avoid if eGFR <30 mL/min), Insulin lower doses
+Note: Monitor blood glucose; adjust for renal function and glycemic control.
+
+Disease: Hypertension
+Medicines: Lisinopril, Hydrochlorothiazide
+Dosage:
+  - Adults: Lisinopril 10-40 mg daily, Hydrochlorothiazide 12.5-50 mg daily
+  - Children: Lisinopril 0.07-0.6 mg/kg daily (max 40 mg), Hydrochlorothiazide 1 mg/kg/day (max 50 mg)
+  - Elderly: Lisinopril 2.5-20 mg daily, Hydrochlorothiazide 12.5-25 mg daily
+Note: Monitor for hypotension and electrolyte imbalances in elderly.
+
+Disease: Migraine
+Medicines: Ibuprofen, Sumatriptan
+Dosage:
+  - Adults: Ibuprofen 400 mg every 4-6 hours as needed, Sumatriptan 50-100 mg at onset (max 200 mg/day)
+  - Children: Ibuprofen 10 mg/kg every 6-8 hours, Sumatriptan not approved for <18 years
+  - Elderly: Ibuprofen 200-400 mg every 6-8 hours, Sumatriptan 25-50 mg
+Note: Avoid overuse to prevent medication-overuse headache; consult for chronic cases.
+
+Disease: Pneumonia
+Medicines: Amoxicillin, Azithromycin
+Dosage:
+  - Adults: Amoxicillin 500 mg three times daily for 7-10 days, Azithromycin 500 mg day 1, then 250 mg daily for 4 days
+  - Children: Amoxicillin 25-45 mg/kg/day in divided doses, Azithromycin 10 mg/kg day 1, then 5 mg/kg daily
+  - Elderly: Amoxicillin 500 mg three times daily (adjust for renal function), Azithromycin same as adults
+Note: Dosages depend on bacterial cause and severity; hospitalization for severe cases.
+
+Disease: Bronchitis
+Medicines: Albuterol, Doxycycline
+Dosage:
+  - Adults: Albuterol 2 puffs every 4-6 hours as needed, Doxycycline 100 mg twice daily for 7-10 days
+  - Children: Albuterol 1-2 puffs every 4-6 hours, Doxycycline not recommended for <8 years
+  - Elderly: Albuterol 2 puffs every 4-6 hours, Doxycycline 100 mg twice daily (adjust for renal function)
+Note: Antibiotics only for bacterial bronchitis; Albuterol for symptom relief.
+
+Disease: Tuberculosis
+Medicines: Isoniazid, Rifampin
+Dosage:
+  - Adults: Isoniazid 300 mg daily for 6-9 months, Rifampin 600 mg daily for 6-9 months
+  - Children: Isoniazid 10-15 mg/kg daily (max 300 mg), Rifampin 10-20 mg/kg daily (max 600 mg)
+  - Elderly: Isoniazid 300 mg daily (monitor liver function), Rifampin 600 mg daily (adjust for liver function)
+Note: Part of a multi-drug regimen; monitor for hepatotoxicity and drug interactions.
+
+Disease: Arthritis
+Medicines: Ibuprofen, Methotrexate
+Dosage:
+  - Adults: Ibuprofen 400-800 mg every 6-8 hours (max 3200 mg/day), Methotrexate 7.5-20 mg once weekly
+  - Children: Ibuprofen 10 mg/kg every 6-8 hours, Methotrexate 10-15 mg/m² weekly (for juvenile arthritis)
+  - Elderly: Ibuprofen 200-400 mg every 6-8 hours, Methotrexate 5-10 mg weekly (monitor renal function)
+Note: Methotrexate for inflammatory arthritis; monitor for toxicity.
+
+Disease: Osteoarthritis
+Medicines: Acetaminophen, Naproxen
+Dosage:
+  - Adults: Acetaminophen 500-1000 mg every 4-6 hours (max 4000 mg/day), Naproxen 250-500 mg twice daily
+  - Children: Acetaminophen 10-15 mg/kg every 4-6 hours, Naproxen 10 mg/kg/day in divided doses (>2 years)
+  - Elderly: Acetaminophen 500-1000 mg every 6 hours (max 3000 mg/day), Naproxen 250 mg twice daily
+Note: Use lowest effective dose in elderly; monitor for gastrointestinal side effects.
+
+Disease: Rheumatoid Arthritis
+Medicines: Methotrexate, Hydroxychloroquine
+Dosage:
+  - Adults: Methotrexate 7.5-20 mg once weekly, Hydroxychloroquine 200-400 mg daily
+  - Children: Methotrexate 10-15 mg/m² weekly, Hydroxychloroquine 5 mg/kg/day (max 400 mg)
+  - Elderly: Methotrexate 5-10 mg weekly, Hydroxychloroquine 200 mg daily (monitor renal function)
+Note: Monitor for liver toxicity and eye exams for Hydroxychloroquine.
+
+Disease: Gout
+Medicines: Colchicine, Allopurinol
+Dosage:
+  - Adults: Colchicine 1.2 mg at onset, then 0.6 mg after 1 hour, Allopurinol 100-300 mg daily
+  - Children: Colchicine not approved for <18 years, Allopurinol 100 mg/m²/day
+  - Elderly: Colchicine 0.6 mg at onset (max 1.2 mg/day), Allopurinol 100-200 mg daily
+Note: Colchicine for acute attacks; Allopurinol for long-term management.
+
+Disease: Anemia
+Medicines: Ferrous Sulfate, Vitamin B12
+Dosage:
+  - Adults: Ferrous Sulfate 325 mg (65 mg iron) twice daily, Vitamin B12 1000 mcg daily (if deficient)
+  - Children: Ferrous Sulfate 3-6 mg/kg/day elemental iron, Vitamin B12 100-500 mcg daily
+  - Elderly: Ferrous Sulfate 325 mg once daily, Vitamin B12 500-1000 mcg daily
+Note: Treat underlying cause; monitor for gastrointestinal side effects.
+
+Disease: Sickle Cell Anemia
+Medicines: Hydroxyurea, Folic Acid
+Dosage:
+  - Adults: Hydroxyurea 15-35 mg/kg daily, Folic Acid 1 mg daily
+  - Children: Hydroxyurea 15-20 mg/kg daily, Folic Acid 0.4-1 mg daily
+  - Elderly: Hydroxyurea 10-15 mg/kg daily, Folic Acid 1 mg daily
+Note: Hydroxyurea for severe cases; monitor blood counts regularly.
+
+Disease: Leukemia
+Medicines: Imatinib, Vincristine
+Dosage:
+  - Adults: Imatinib 400-600 mg daily (for CML), Vincristine 1.4 mg/m² IV weekly (for ALL)
+  - Children: Imatinib 260-340 mg/m² daily, Vincristine 1.5 mg/m² IV weekly
+  - Elderly: Imatinib 400 mg daily (adjust for tolerance), Vincristine 1 mg/m² IV weekly
+Note: Part of chemotherapy regimen; requires specialist oversight.
+
+Disease: Lymphoma
+Medicines: Rituximab, Cyclophosphamide
+Dosage:
+  - Adults: Rituximab 375 mg/m² IV weekly, Cyclophosphamide 750 mg/m² IV every 3 weeks
+  - Children: Rituximab 375 mg/m² IV weekly, Cyclophosphamide 600-1200 mg/m² IV
+  - Elderly: Rituximab 375 mg/m² IV (adjust for tolerance), Cyclophosphamide 500 mg/m² IV
+Note: Part of CHOP regimen; monitor for infusion reactions and toxicity.
+
+Disease: Hepatitis A
+Medicines: Supportive Care, Hepatitis A Vaccine
+Dosage:
+  - Adults: Supportive Care (no specific antiviral), Hepatitis A Vaccine (post-exposure prophylaxis)
+  - Children: Supportive Care, Hepatitis A Vaccine (age-based schedule)
+  - Elderly: Supportive Care, Hepatitis A Vaccine (if not previously vaccinated)
+Note: Focus on hydration and rest; vaccine for prevention or post-exposure.
+
+Disease: Hepatitis B
+Medicines: Tenofovir, Entecavir
+Dosage:
+  - Adults: Tenofovir 300 mg daily, Entecavir 0.5-1 mg daily
+  - Children: Tenofovir not approved for <12 years, Entecavir 0.015 mg/kg daily (max 0.5 mg)
+  - Elderly: Tenofovir 300 mg daily (adjust for renal function), Entecavir 0.5 mg daily
+Note: Long-term treatment for chronic cases; monitor liver and renal function.
+
+Disease: Hepatitis C
+Medicines: Sofosbuvir, Ledipasvir
+Dosage:
+  - Adults: Sofosbuvir 400 mg/Ledipasvir 90 mg daily for 12 weeks, Sofosbuvir 400 mg daily (combination therapy)
+  - Children: Sofosbuvir/Ledipasvir weight-based for >3 years, Sofosbuvir weight-based
+  - Elderly: Sofosbuvir 400 mg/Ledipasvir 90 mg daily (adjust for renal function)
+Note: Genotype-specific treatment; monitor for drug interactions.
+
+Disease: Cirrhosis
+Medicines: Lactulose, Spironolactone
+Dosage:
+  - Adults: Lactulose 15-30 mL 2-4 times daily, Spironolactone 100-400 mg daily
+  - Children: Lactulose 1-3 mL/kg/day in divided doses, Spironolactone 1-3 mg/kg/day
+  - Elderly: Lactulose 15-30 mL 2-3 times daily, Spironolactone 50-200 mg daily
+Note: For hepatic encephalopathy and ascites; monitor electrolytes.
+
+Disease: Gastritis
+Medicines: Omeprazole, Ranitidine
+Dosage:
+  - Adults: Omeprazole 20-40 mg daily, Ranitidine 150 mg twice daily
+  - Children: Omeprazole 1 mg/kg/day (max 40 mg), Ranitidine 2-4 mg/kg/day
+  - Elderly: Omeprazole 20 mg daily, Ranitidine 150 mg once daily
+Note: Treat underlying cause (e.g., H. pylori); monitor for long-term PPI use.
+
+Disease: Peptic Ulcer
+Medicines: Omeprazole, Amoxicillin
+Dosage:
+  - Adults: Omeprazole 20-40 mg daily, Amoxicillin 1000 mg twice daily (with clarithromycin for H. pylori)
+  - Children: Omeprazole 1 mg/kg/day, Amoxicillin 25-50 mg/kg/day
+  - Elderly: Omeprazole 20 mg daily, Amoxicillin 500 mg twice daily
+Note: Part of H. pylori eradication regimen; complete full course.
+
+Disease: Crohn's Disease
+Medicines: Mesalamine, Budesonide
+Dosage:
+  - Adults: Mesalamine 2.4-4.8 g daily, Budesonide 9 mg daily for 8 weeks
+  - Children: Mesalamine 30-60 mg/kg/day, Budesonide 9 mg daily (age-based)
+  - Elderly: Mesalamine 2.4 g daily, Budesonide 6-9 mg daily
+Note: Adjust for disease severity; monitor for corticosteroid side effects.
+
+Disease: Ulcerative Colitis
+Medicines: Mesalamine, Prednisone
+Dosage:
+  - Adults: Mesalamine 2.4-4.8 g daily, Prednisone 40-60 mg daily (taper)
+  - Children: Mesalamine 30-60 mg/kg/day, Prednisone 1-2 mg/kg/day (taper)
+  - Elderly: Mesalamine 2.4 g daily, Prednisone 20-40 mg daily (taper)
+Note: Prednisone for flares; monitor for long-term steroid effects.
+
+Disease: Irritable Bowel Syndrome
+Medicines: Loperamide, Dicyclomine
+Dosage:
+  - Adults: Loperamide 4 mg initially, then 2 mg after each loose stool (max 16 mg/day), Dicyclomine 20-40 mg four times daily
+  - Children: Loperamide 0.08-0.24 mg/kg/day (max 8 mg/day, >2 years), Dicyclomine not recommended
+  - Elderly: Loperamide 2-4 mg as needed, Dicyclomine 10-20 mg four times daily
+Note: Use for symptom relief; avoid overuse of Loperamide.
+
+Disease: Celiac Disease
+Medicines: Gluten-Free Diet, Vitamin D
+Dosage:
+  - Adults: Gluten-Free Diet, Vitamin D 800-2000 IU daily
+  - Children: Gluten-Free Diet, Vitamin D 400-800 IU daily
+  - Elderly: Gluten-Free Diet, Vitamin D 1000-2000 IU daily
+Note: Strict gluten avoidance; supplements for deficiencies.
+
+Disease: Pancreatitis
+Medicines: Pain Management, IV Fluids
+Dosage:
+  - Adults: Pain Management (e.g., Hydromorphone 0.5-2 mg IV every 4-6 hours), IV Fluids (per clinical protocol)
+  - Children: Pain Management (age/weight-based), IV Fluids (per protocol)
+  - Elderly: Pain Management (lower doses, e.g., 0.5-1 mg Hydromorphone), IV Fluids
+Note: Supportive care; treat underlying cause (e.g., gallstones).
+
+Disease: Gallstones
+Medicines: Ursodiol, Pain Management
+Dosage:
+  - Adults: Ursodiol 8-10 mg/kg/day in 2-3 doses, Pain Management (e.g., Ibuprofen 400-800 mg as needed)
+  - Children: Ursodiol 10-15 mg/kg/day, Pain Management (Ibuprofen 10 mg/kg)
+  - Elderly: Ursodiol 8-10 mg/kg/day, Pain Management (lower doses, e.g., Ibuprofen 200-400 mg)
+Note: Ursodiol for small stones; surgery often required.
+
+Disease: Kidney Stones
+Medicines: Tamsulosin, Ibuprofen
+Dosage:
+  - Adults: Tamsulosin 0.4 mg daily, Ibuprofen 400-800 mg every 6-8 hours
+  - Children: Tamsulosin not approved for <18 years, Ibuprofen 10 mg/kg every 6-8 hours
+  - Elderly: Tamsulosin 0.4 mg daily, Ibuprofen 200-400 mg every 6-8 hours
+Note: Increase fluid intake; Tamsulosin for stone passage.
+
+Disease: Urinary Tract Infection
+Medicines: Nitrofurantoin, Ciprofloxacin
+Dosage:
+  - Adults: Nitrofurantoin 100 mg twice daily for 5-7 days, Ciprofloxacin 250-500 mg twice daily for 3-7 days
+  - Children: Nitrofurantoin 5-7 mg/kg/day in divided doses (>1 month), Ciprofloxacin not recommended
+  - Elderly: Nitrofurantoin 50-100 mg twice daily, Ciprofloxacin 250 mg twice daily
+Note: Confirm bacterial sensitivity; avoid Ciprofloxacin in elderly if possible.
+
+Disease: Prostatitis
+Medicines: Ciprofloxacin, Doxazosin
+Dosage:
+  - Adults: Ciprofloxacin 500 mg twice daily for 4-6 weeks, Doxazosin 4-8 mg daily
+  - Children: Not applicable
+  - Elderly: Ciprofloxacin 250-500 mg twice daily, Doxazosin 2-4 mg daily
+Note: Antibiotics for bacterial prostatitis; Doxazosin for symptom relief.
+
+Disease: Endometriosis
+Medicines: Ibuprofen, Levonorgestrel IUD
+Dosage:
+  - Adults: Ibuprofen 400-800 mg every 6-8 hours, Levonorgestrel IUD (inserted by clinician)
+  - Children: Ibuprofen 10 mg/kg every 6-8 hours, Levonorgestrel IUD not approved for <18 years
+  - Elderly: Not applicable
+Note: Hormonal therapy for long-term management; surgery may be required.
+
+Disease: Polycystic Ovary Syndrome
+Medicines: Metformin, Spironolactone
+Dosage:
+  - Adults: Metformin 500-2000 mg daily, Spironolactone 50-100 mg daily
+  - Children: Metformin 500-2000 mg daily (>10 years), Spironolactone not approved
+  - Elderly: Not applicable
+Note: For insulin resistance and hirsutism; monitor electrolytes.
+
+Disease: Thyroiditis
+Medicines: Levothyroxine, Prednisone
+Dosage:
+  - Adults: Levothyroxine 50-100 mcg daily, Prednisone 20-40 mg daily (taper)
+  - Children: Levothyroxine 2-4 mcg/kg/day, Prednisone 1-2 mg/kg/day (taper)
+  - Elderly: Levothyroxine 25-50 mcg daily, Prednisone 10-20 mg daily (taper)
+Note: Levothyroxine for hypothyroidism; Prednisone for inflammation.
+
+Disease: Hypothyroidism
+Medicines: Levothyroxine, Liothyronine
+Dosage:
+  - Adults: Levothyroxine 50-200 mcg daily, Liothyronine 25-50 mcg daily
+  - Children: Levothyroxine 2-4 mcg/kg/day, Liothyronine 5-20 mcg daily
+  - Elderly: Levothyroxine 25-100 mcg daily, Liothyronine 5-25 mcg daily
+Note: Adjust based on TSH levels; start low in elderly.
+
+Disease: Hashimoto's Thyroiditis
+Medicines: Levothyroxine, Selenium
+Dosage:
+  - Adults: Levothyroxine 50-200 mcg daily, Selenium 100-200 mcg daily
+  - Children: Levothyroxine 2-4 mcg/kg/day, Selenium 50-100 mcg daily
+  - Elderly: Levothyroxine 25-100 mcg daily, Selenium 100 mcg daily
+Note: Selenium may reduce antibodies; monitor TSH levels.
+
+Disease: Hyperthyroidism
+Medicines: Methimazole, Propylthiouracil
+Dosage:
+  - Adults: Methimazole 15-30 mg daily, Propylthiouracil 100-300 mg three times daily
+  - Children: Methimazole 0.2-0.5 mg/kg/day, Propylthiouracil 5-10 mg/kg/day
+  - Elderly: Methimazole 5-15 mg daily, Propylthiouracil 50-150 mg three times daily
+Note: Monitor thyroid function; lower doses for elderly due to cardiac risks.
+
+Disease: Graves' Disease
+Medicines: Methimazole, Propranolol
+Dosage:
+  - Adults: Methimazole 15-30 mg daily, Propranolol 20-40 mg three times daily
+  - Children: Methimazole 0.2-0.5 mg/kg/day, Propranolol 0.5-2 mg/kg/day
+  - Elderly: Methimazole 5-15 mg daily, Propranolol 10-20 mg three times daily
+Note: Propranolol for symptom relief; monitor for agranulocytosis with Methimazole.
+
+Disease: Lupus
+Medicines: Hydroxychloroquine, Prednisone
+Dosage:
+  - Adults: Hydroxychloroquine 200-400 mg daily, Prednisone 5-60 mg daily (taper)
+  - Children: Hydroxychloroquine 5 mg/kg/day (max 400 mg), Prednisone 0.5-2 mg/kg/day
+  - Elderly: Hydroxychloroquine 200 mg daily, Prednisone 5-20 mg daily (taper)
+Note: Adjust Prednisone for flares; regular eye exams for Hydroxychloroquine.
+
+Disease: Scleroderma
+Medicines: Methotrexate, Nifedipine
+Dosage:
+  - Adults: Methotrexate 7.5-25 mg weekly, Nifedipine 30-120 mg daily
+  - Children: Methotrexate 10-15 mg/m² weekly, Nifedipine not recommended
+  - Elderly: Methotrexate 5-15 mg weekly, Nifedipine 30-60 mg daily
+Note: Nifedipine for Raynaud’s; monitor liver function with Methotrexate.
+
+Disease: Psoriasis
+Medicines: Topical Corticosteroids, Methotrexate
+Dosage:
+  - Adults: Topical Corticosteroids (e.g., Betamethasone 0.05% twice daily), Methotrexate 7.5-25 mg weekly
+  - Children: Topical Corticosteroids (low potency, e.g., Hydrocortisone 1%), Methotrexate 10-15 mg/m² weekly
+  - Elderly: Topical Corticosteroids (low potency), Methotrexate 5-15 mg weekly
+Note: Use lowest effective corticosteroid potency; monitor for Methotrexate toxicity.
+
+Disease: Eczema
+Medicines: Hydrocortisone, Tacrolimus
+Dosage:
+  - Adults: Hydrocortisone 1% cream twice daily, Tacrolimus 0.1% ointment twice daily
+  - Children: Hydrocortisone 0.5-1% cream twice daily, Tacrolimus 0.03% ointment (>2 years)
+  - Elderly: Hydrocortisone 1% cream twice daily, Tacrolimus 0.03-0.1% ointment
+Note: Avoid prolonged corticosteroid use; Tacrolimus for moderate-severe cases.
+
+Disease: Allergies
+Medicines: Cetirizine, Fluticasone Nasal Spray
+Dosage:
+  - Adults: Cetirizine 10 mg daily, Fluticasone 50 mcg/spray, 2 sprays per nostril daily
+  - Children: Cetirizine 2.5-5 mg daily (>2 years), Fluticasone 1 spray per nostril daily (>4 years)
+  - Elderly: Cetirizine 5-10 mg daily, Fluticasone same as adults
+Note: Non-drowsy antihistamines preferred; monitor for nasal irritation.
+
+Disease: Anaphylaxis
+Medicines: Epinephrine, Diphenhydramine
+Dosage:
+  - Adults: Epinephrine 0.3-0.5 mg IM every 5-15 minutes, Diphenhydramine 25-50 mg IV/IM
+  - Children: Epinephrine 0.01 mg/kg IM (max 0.3 mg), Diphenhydramine 1-2 mg/kg IV/IM
+  - Elderly: Epinephrine 0.3 mg IM, Diphenhydramine 25 mg IV/IM
+Note: Epinephrine is first-line; administer immediately in emergencies.
+
+Disease: Meningitis
+Medicines: Ceftriaxone, Vancomycin
+Dosage:
+  - Adults: Ceftriaxone 2 g IV every 12 hours, Vancomycin 15-20 mg/kg IV every 8-12 hours
+  - Children: Ceftriaxone 50-100 mg/kg/day IV in divided doses, Vancomycin 15 mg/kg every 6 hours
+  - Elderly: Ceftriaxone 1-2 g IV every 12 hours, Vancomycin 10-15 mg/kg every 12 hours
+Note: Adjust for bacterial cause; requires hospitalization and monitoring.
+
+Disease: Encephalitis
+Medicines: Acyclovir, Supportive Care
+Dosage:
+  - Adults: Acyclovir 10 mg/kg IV every 8 hours, Supportive Care (per clinical protocol)
+  - Children: Acyclovir 10-20 mg/kg IV every 8 hours, Supportive Care
+  - Elderly: Acyclovir 10 mg/kg IV every 8 hours (adjust for renal function), Supportive Care
+Note: Acyclovir for viral causes (e.g., HSV); urgent administration required.
+
+Disease: Stroke
+Medicines: Aspirin, Alteplase
+Dosage:
+  - Adults: Aspirin 160-325 mg daily (post-acute), Alteplase 0.9 mg/kg IV within 4.5 hours
+  - Children: Not applicable
+  - Elderly: Aspirin 81-160 mg daily, Alteplase 0.9 mg/kg IV (if eligible)
+Note: Alteplase for ischemic stroke; time-sensitive administration.
+
+Disease: Heart Attack
+Medicines: Aspirin, Nitroglycerin
+Dosage:
+  - Adults: Aspirin 325 mg chewed immediately, Nitroglycerin 0.4 mg sublingual every 5 minutes (max 3 doses)
+  - Children: Not applicable
+  - Elderly: Aspirin 81-325 mg, Nitroglycerin 0.4 mg sublingual (monitor hypotension)
+Note: Emergency treatment; requires immediate medical attention.
+
+Disease: Angina
+Medicines: Nitroglycerin, Atenolol
+Dosage:
+  - Adults: Nitroglycerin 0.4 mg sublingual as needed, Atenolol 50-100 mg daily
+  - Children: Not applicable
+  - Elderly: Nitroglycerin 0.4 mg sublingual, Atenolol 25-50 mg daily
+Note: Atenolol for long-term control; monitor blood pressure.
+
+Disease: Heart Failure
+Medicines: Furosemide, Lisinopril
+Dosage:
+  - Adults: Furosemide 20-80 mg daily, Lisinopril 5-40 mg daily
+  - Children: Furosemide 1-2 mg/kg/day, Lisinopril 0.07-0.6 mg/kg/day
+  - Elderly: Furosemide 20-40 mg daily, Lisinopril 2.5-20 mg daily
+Note: Monitor electrolytes and renal function; adjust for fluid status.
+
+Disease: Atrial Fibrillation
+Medicines: Apixaban, Metoprolol
+Dosage:
+  - Adults: Apixaban 5 mg twice daily, Metoprolol 25-100 mg twice daily
+  - Children: Not applicable
+  - Elderly: Apixaban 2.5-5 mg twice daily (adjust for renal function), Metoprolol 12.5-50 mg twice daily
+Note: Anticoagulation for stroke prevention; monitor heart rate.
+
+Disease: Deep Vein Thrombosis
+Medicines: Heparin, Warfarin
+Dosage:
+  - Adults: Heparin 80 units/kg IV bolus, then 18 units/kg/hour, Warfarin 2-5 mg daily (adjust INR)
+  - Children: Heparin 75 units/kg IV bolus, then 20 units/kg/hour, Warfarin not common
+  - Elderly: Heparin lower doses (adjust for weight), Warfarin 1-5 mg daily
+Note: Monitor INR for Warfarin; transition from Heparin.
+
+Disease: Pulmonary Embolism
+Medicines: Heparin, Apixaban
+Dosage:
+  - Adults: Heparin 80 units/kg IV bolus, then 18 units/kg/hour, Apixaban 10 mg twice daily for 7 days, then 5 mg twice daily
+  - Children: Heparin 75 units/kg IV bolus, then 20 units/kg/hour, Apixaban not approved
+  - Elderly: Heparin lower doses, Apixaban 2.5-5 mg twice daily
+Note: Requires hospitalization; monitor for bleeding risks.
+
+Disease: Chronic Obstructive Pulmonary Disease
+Medicines: Albuterol, Tiotropium
+Dosage:
+  - Adults: Albuterol 2 puffs every 4-6 hours as needed, Tiotropium 18 mcg daily
+  - Children: Albuterol 1-2 puffs every 4-6 hours, Tiotropium not approved for <18 years
+  - Elderly: Albuterol 2 puffs as needed, Tiotropium 18 mcg daily
+Note: Tiotropium for maintenance; monitor for anticholinergic effects.
+
+Disease: Emphysema
+Medicines: Ipratropium, Budesonide
+Dosage:
+  - Adults: Ipratropium 2 puffs four times daily, Budesonide 180-360 mcg twice daily
+  - Children: Ipratropium 1-2 puffs four times daily, Budesonide 180 mcg twice daily
+  - Elderly: Ipratropium 2 puffs four times daily, Budesonide 180 mcg twice daily
+Note: Combination therapy for symptom control; monitor for side effects.
+
+Disease: Cystic Fibrosis
+Medicines: Dornase Alfa, Ivacaftor
+Dosage:
+  - Adults: Dornase Alfa 2.5 mg nebulized daily, Ivacaftor 150 mg twice daily
+  - Children: Dornase Alfa 2.5 mg daily (>5 years), Ivacaftor 75-150 mg twice daily (>2 years)
+  - Elderly: Not applicable
+Note: Ivacaftor for specific mutations; monitor lung function.
+
+Disease: Lung Cancer
+Medicines: Pembrolizumab, Carboplatin
+Dosage:
+  - Adults: Pembrolizumab 200 mg IV every 3 weeks, Carboplatin AUC 5-6 IV every 3 weeks
+  - Children: Not applicable
+  - Elderly: Pembrolizumab 200 mg IV every 3 weeks, Carboplatin AUC 4-5 IV
+Note: Part of chemotherapy/immunotherapy regimen; requires specialist oversight.
+
+Disease: Breast Cancer
+Medicines: Tamoxifen, Trastuzumab
+Dosage:
+  - Adults: Tamoxifen 20 mg daily, Trastuzumab 8 mg/kg IV loading, then 6 mg/kg every 3 weeks
+  - Children: Not applicable
+  - Elderly: Tamoxifen 20 mg daily, Trastuzumab same (adjust for cardiac function)
+Note: Trastuzumab for HER2-positive cases; monitor cardiac function.
+
+Disease: Prostate Cancer
+Medicines: Leuprolide, Abiraterone
+Dosage:
+  - Adults: Leuprolide 7.5 mg IM monthly, Abiraterone 1000 mg daily with prednisone
+  - Children: Not applicable
+  - Elderly: Leuprolide 7.5 mg IM monthly, Abiraterone 500-1000 mg daily
+Note: Hormonal therapy for advanced disease; monitor liver function.
+
+Disease: Colorectal Cancer
+Medicines: Fluorouracil, Oxaliplatin
+Dosage:
+  - Adults: Fluorouracil 400 mg/m² IV bolus, then 2400 mg/m² over 46 hours, Oxaliplatin 85 mg/m² IV every 2 weeks
+  - Children: Not applicable
+  - Elderly: Fluorouracil lower doses, Oxaliplatin 65-85 mg/m² IV
+Note: Part of FOLFOX regimen; monitor for neuropathy and toxicity.
+
+Disease: Skin Cancer
+Medicines: Imiquimod, Fluorouracil Cream
+Dosage:
+  - Adults: Imiquimod 5% cream applied 5 times/week for 6 weeks, Fluorouracil 5% cream twice daily for 2-4 weeks
+  - Children: Not applicable
+  - Elderly: Imiquimod 5% cream 3-5 times/week, Fluorouracil 5% cream once daily
+Note: For non-melanoma skin cancers; monitor for skin irritation.
+
+Disease: Melanoma
+Medicines: Pembrolizumab, Dacarbazine
+Dosage:
+  - Adults: Pembrolizumab 200 mg IV every 3 weeks, Dacarbazine 250 mg/m² IV daily for 5 days every 3 weeks
+  - Children: Not applicable
+  - Elderly: Pembrolizumab 200 mg IV every 3 weeks, Dacarbazine 150-250 mg/m² IV
+Note: Immunotherapy preferred; requires specialist oversight.
+
+Disease: Ovarian Cancer
+Medicines: Carboplatin, Paclitaxel
+Dosage:
+  - Adults: Carboplatin AUC 5-6 IV every 3 weeks, Paclitaxel 175 mg/m² IV every 3 weeks
+  - Children: Not applicable
+  - Elderly: Carboplatin AUC 4-5 IV, Paclitaxel 135-175 mg/m² IV
+Note: Part of chemotherapy regimen; monitor for neuropathy and myelosuppression.
+
+Disease: Cervical Cancer
+Medicines: Cisplatin, Bevacizumab
+Dosage:
+  - Adults: Cisplatin 40 mg/m² IV weekly, Bevacizumab 15 mg/kg IV every 3 weeks
+  - Children: Not applicable
+  - Elderly: Cisplatin 30-40 mg/m² IV, Bevacizumab 10-15 mg/kg IV
+Note: Chemoradiation for early stages; monitor renal function.
+
+Disease: Pancreatic Cancer
+Medicines: Gemcitabine, Nab-Paclitaxel
+Dosage:
+  - Adults: Gemcitabine 1000 mg/m² IV weekly for 3 weeks every 4 weeks, Nab-Paclitaxel 125 mg/m² IV weekly
+  - Children: Not applicable
+  - Elderly: Gemcitabine 800-1000 mg/m² IV, Nab-Paclitaxel 100-125 mg/m² IV
+Note: Palliative treatment; monitor for myelosuppression.
+
+Disease: Liver Cancer
+Medicines: Sorafenib, Atezolizumab
+Dosage:
+  - Adults: Sorafenib 400 mg twice daily, Atezolizumab 1200 mg IV every 3 weeks
+  - Children: Not applicable
+  - Elderly: Sorafenib 200-400 mg twice daily, Atezolizumab 1200 mg IV
+Note: For advanced HCC; monitor liver function and skin reactions.
+
+Disease: Stomach Cancer
+Medicines: Fluorouracil, Cisplatin
+Dosage:
+  - Adults: Fluorouracil 800 mg/m² IV daily for 5 days every 4 weeks, Cisplatin 75-100 mg/m² IV every 4 weeks
+  - Children: Not applicable
+  - Elderly: Fluorouracil 600-800 mg/m² IV, Cisplatin 50-75 mg/m² IV
+Note: Part of chemotherapy regimen; monitor renal function.
+
+Disease: Esophageal Cancer
+Medicines: Fluorouracil, Oxaliplatin
+Dosage:
+  - Adults: Fluorouracil 1000 mg/m² IV daily for 4 days every 3 weeks, Oxaliplatin 85 mg/m² IV every 2 weeks
+  - Children: Not applicable
+  - Elderly: Fluorouracil 800 mg/m² IV, Oxaliplatin 65-85 mg/m² IV
+Note: Chemoradiation for early stages; monitor for toxicity.
+
+Disease: Bladder Cancer
+Medicines: Cisplatin, Gemcitabine
+Dosage:
+  - Adults: Cisplatin 70 mg/m² IV every 3 weeks, Gemcitabine 1000 mg/m² IV on days 1, 8, 15 every 4 weeks
+  - Children: Not applicable
+  - Elderly: Cisplatin 50-70 mg/m² IV, Gemcitabine 800-1000 mg/m² IV
+Note: For advanced disease; monitor renal function.
+
+Disease: Kidney Cancer
+Medicines: Sunitinib, Pembrolizumab
+Dosage:
+  - Adults: Sunitinib 50 mg daily for 4 weeks every 6 weeks, Pembrolizumab 200 mg IV every 3 weeks
+  - Children: Not applicable
+  - Elderly: Sunitinib 25-50 mg daily, Pembrolizumab 200 mg IV
+Note: For advanced RCC; monitor for hypertension and fatigue.
+
+Disease: Multiple Sclerosis
+Medicines: Interferon Beta-1a, Fingolimod
+Dosage:
+  - Adults: Interferon Beta-1a 30 mcg IM weekly, Fingolimod 0.5 mg daily
+  - Children: Not applicable
+  - Elderly: Interferon Beta-1a 30 mcg IM weekly, Fingolimod 0.5 mg daily
+Note: For relapsing-remitting MS; monitor for lymphopenia with Fingolimod.
+
+Disease: Parkinson's Disease
+Medicines: Levodopa/Carbidopa, Pramipexole
+Dosage:
+  - Adults: Levodopa/Carbidopa 25/100 mg three times daily, Pramipexole 0.375-4.5 mg daily
+  - Children: Not applicable
+  - Elderly: Levodopa/Carbidopa 25/100 mg twice daily, Pramipexole 0.125-1.5 mg daily
+Note: Titrate doses slowly; monitor for dyskinesia and hypotension.
+
+Disease: Autism Spectrum Disorder
+Medicines: Risperidone, Aripiprazole
+Dosage:
+  - Adults: Risperidone 0.5-6 mg daily, Aripiprazole 2-15 mg daily
+  - Children: Risperidone 0.25-3 mg daily (>5 years), Aripiprazole 2-15 mg daily (>6 years)
+  - Elderly: Not applicable
+Note: For irritability associated with ASD; monitor for weight gain and sedation.
+
+Disease: Attention Deficit Hyperactivity Disorder
+Medicines: Methylphenidate, Atomoxetine
+Dosage:
+  - Adults: Methylphenidate 10-60 mg daily in divided doses, Atomoxetine 40-100 mg daily
+  - Children: Methylphenidate 5-60 mg daily (>6 years), Atomoxetine 0.5-1.4 mg/kg/day (>6 years)
+  - Elderly: Not applicable
+Note: Titrate doses slowly; monitor for cardiovascular effects and appetite suppression.
+
+Disease: Chronic Fatigue Syndrome
+Medicines: Cognitive Behavioral Therapy, Low-Dose Naltrexone
+Dosage:
+  - Adults: CBT (per clinician protocol), Naltrexone 1.5-4.5 mg daily at bedtime
+  - Children: CBT (age-appropriate), Naltrexone not recommended
+  - Elderly: CBT, Naltrexone 1.5-3 mg daily
+Note: CBT is primary; Naltrexone off-label for symptom relief.
+
+Disease: Fibromyalgia
+Medicines: Duloxetine, Pregabalin
+Dosage:
+  - Adults: Duloxetine 30-60 mg daily, Pregabalin 150-450 mg daily in divided doses
+  - Children: Not applicable
+  - Elderly: Duloxetine 20-30 mg daily, Pregabalin 75-300 mg daily
+Note: Adjust for pain severity; monitor for sedation and dizziness.
+
+Disease: Lyme Disease
+Medicines: Doxycycline, Amoxicillin
+Dosage:
+  - Adults: Doxycycline 100 mg twice daily for 10-21 days, Amoxicillin 500 mg three times daily for 14-21 days
+  - Children: Doxycycline 4.4 mg/kg/day (>8 years), Amoxicillin 50 mg/kg/day in divided doses
+  - Elderly: Doxycycline 100 mg twice daily, Amoxicillin 500 mg three times daily
+Note: Early treatment critical; adjust duration for late-stage disease.
+
+Disease: Malaria
+Medicines: Artemether-Lumefantrine, Chloroquine
+Dosage:
+  - Adults: Artemether-Lumefantrine 20/120 mg, 4 tablets twice daily for 3 days, Chloroquine 600 mg base initially, then 300 mg base at 6, 24, 48 hours
+  - Children: Artemether-Lumefantrine 5-35 mg/kg (weight-based), Chloroquine 10 mg/kg base initially, then 5 mg/kg
+  - Elderly: Same as adults, adjust for renal/hepatic function
+Note: Choice depends on malaria strain and resistance; consult WHO guidelines.
+
+Disease: Dengue Fever
+Medicines: Supportive Care, Acetaminophen
+Dosage:
+  - Adults: Supportive Care (hydration), Acetaminophen 500-1000 mg every 4-6 hours (max 4000 mg/day)
+  - Children: Supportive Care, Acetaminophen 10-15 mg/kg every 4-6 hours
+  - Elderly: Supportive Care, Acetaminophen 500-1000 mg every 6 hours (max 3000 mg/day)
+Note: Avoid NSAIDs; monitor for severe dengue signs.
+
+Disease: Zika Virus
+Medicines: Supportive Care, Acetaminophen
+Dosage:
+  - Adults: Supportive Care (rest, hydration), Acetaminophen 500-1000 mg every 4-6 hours (max 4000 mg/day)
+  - Children: Supportive Care, Acetaminophen 10-15 mg/kg every 4-6 hours
+  - Elderly: Supportive Care, Acetaminophen 500-1000 mg every 6 hours (max 3000 mg/day)
+Note: No specific antiviral; prevent mosquito bites.
+
+Disease: West Nile Virus
+Medicines: Supportive Care, Pain Management
+Dosage:
+  - Adults: Supportive Care (hydration), Pain Management (e.g., Ibuprofen 400-800 mg every 6-8 hours)
+  - Children: Supportive Care, Ibuprofen 10 mg/kg every 6-8 hours
+  - Elderly: Supportive Care, Ibuprofen 200-400 mg every 6-8 hours
+Note: No specific antiviral; severe cases require hospitalization.
+
+Disease: Chikungunya
+Medicines: Acetaminophen, Ibuprofen
+Dosage:
+  - Adults: Acetaminophen 500-1000 mg every 4-6 hours, Ibuprofen 400-800 mg every 6-8 hours
+  - Children: Acetaminophen 10-15 mg/kg every 4-6 hours, Ibuprofen 10 mg/kg every 6-8 hours
+  - Elderly: Acetaminophen 500-1000 mg every 6 hours, Ibuprofen 200-400 mg every 6-8 hours
+Note: Symptom relief only; monitor for joint pain persistence.
+
+Disease: Typhoid Fever
+Medicines: Ciprofloxacin, Azithromycin
+Dosage:
+  - Adults: Ciprofloxacin 500 mg twice daily for 7-10 days, Azithromycin 500 mg daily for 7 days
+  - Children: Ciprofloxacin 15 mg/kg twice daily (>6 months), Azithromycin 10 mg/kg daily
+  - Elderly: Ciprofloxacin 250-500 mg twice daily, Azithromycin 500 mg daily
+Note: Confirm antibiotic sensitivity; monitor for relapse.
+
+Disease: Cholera
+Medicines: Doxycycline, Oral Rehydration Solution
+Dosage:
+  - Adults: Doxycycline 300 mg single dose, ORS per WHO protocol
+  - Children: Doxycycline 2-4 mg/kg single dose (>8 years), ORS weight-based
+  - Elderly: Doxycycline 300 mg single dose, ORS adjusted for renal function
+Note: Rehydration is primary; antibiotics shorten duration.
+
+Disease: Rabies
+Medicines: Rabies Vaccine, Rabies Immunoglobulin
+Dosage:
+  - Adults: Rabies Vaccine 1 mL IM on days 0, 3, 7, 14, Rabies Immunoglobulin 20 IU/kg single dose
+  - Children: Rabies Vaccine 1 mL IM (same schedule), Rabies Immunoglobulin 20 IU/kg
+  - Elderly: Same as adults
+Note: Post-exposure prophylaxis; administer immediately after exposure.
+
+Disease: Tetanus
+Medicines: Tetanus Immunoglobulin, Metronidazole
+Dosage:
+  - Adults: Tetanus Immunoglobulin 500-3000 IU IM, Metronidazole 500 mg IV every 6 hours for 7-10 days
+  - Children: Tetanus Immunoglobulin 500 IU IM, Metronidazole 7.5 mg/kg IV every 6 hours
+  - Elderly: Tetanus Immunoglobulin 500-1000 IU IM, Metronidazole 500 mg IV every 8 hours
+Note: Requires wound care and supportive treatment; hospitalization needed.
+
+Disease: Diphtheria
+Medicines: Diphtheria Antitoxin, Erythromycin
+Dosage:
+  - Adults: Diphtheria Antitoxin 20,000-100,000 IU IV, Erythromycin 500 mg four times daily for 14 days
+  - Children: Diphtheria Antitoxin 20,000-100,000 IU IV, Erythromycin 40-50 mg/kg/day
+  - Elderly: Diphtheria Antitoxin 20,000-40,000 IU IV, Erythromycin 250-500 mg four times daily
+Note: Antitoxin urgent; monitor for cardiac complications.
+
+Disease: Pertussis
+Medicines: Azithromycin, Clarithromycin
+Dosage:
+  - Adults: Azithromycin 500 mg day 1, then 250 mg daily for 4 days, Clarithromycin 500 mg twice daily for 7 days
+  - Children: Azithromycin 10 mg/kg day 1, then 5 mg/kg daily, Clarithromycin 15 mg/kg/day in divided doses
+  - Elderly: Azithromycin same as adults, Clarithromycin 250-500 mg twice daily
+Note: Early treatment reduces severity; isolate patients.
+
+Disease: Measles
+Medicines: Vitamin A, Supportive Care
+Dosage:
+  - Adults: Vitamin A 200,000 IU daily for 2 days, Supportive Care (hydration, antipyretics)
+  - Children: Vitamin A 50,000-200,000 IU daily for 2 days (age-based), Supportive Care
+  - Elderly: Vitamin A 200,000 IU daily for 2 days, Supportive Care
+Note: Vitamin A reduces complications; no specific antiviral.
+
+Disease: Mumps
+Medicines: Supportive Care, Acetaminophen
+Dosage:
+  - Adults: Supportive Care (rest, hydration), Acetaminophen 500-1000 mg every 4-6 hours
+  - Children: Supportive Care, Acetaminophen 10-15 mg/kg every 4-6 hours
+  - Elderly: Supportive Care, Acetaminophen 500-1000 mg every 6 hours
+Note: Symptom relief only; monitor for complications like orchitis.
+
+Disease: Rubella
+Medicines: Supportive Care, Acetaminophen
+Dosage:
+  - Adults: Supportive Care (rest, hydration), Acetaminophen 500-1000 mg every 4-6 hours
+  - Children: Supportive Care, Acetaminophen 10-15 mg/kg every 4-6 hours
+  - Elderly: Supportive Care, Acetaminophen 500-1000 mg every 6 hours
+Note: No specific antiviral; prevent spread to pregnant women.
+
+Disease: Chickenpox
+Medicines: Acyclovir, Calamine Lotion
+Dosage:
+  - Adults: Acyclovir 800 mg five times daily for 7 days, Calamine Lotion applied as needed
+  - Children: Acyclovir 20 mg/kg four times daily (>2 years), Calamine Lotion as needed
+  - Elderly: Acyclovir 800 mg five times daily (adjust for renal function), Calamine Lotion
+Note: Acyclovir within 24 hours of rash onset; monitor for complications.
+
+Disease: Shingles
+Medicines: Acyclovir, Gabapentin
+Dosage:
+  - Adults: Acyclovir 800 mg five times daily for 7-10 days, Gabapentin 300-1800 mg daily for pain
+  - Children: Acyclovir 20 mg/kg four times daily, Gabapentin not common
+  - Elderly: Acyclovir 800 mg five times daily (adjust for renal function), Gabapentin 100-900 mg daily
+Note: Start Acyclovir within 72 hours; Gabapentin for postherpetic neuralgia.

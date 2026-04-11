@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment variables — NEVER commit these
+.env
+backend/.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+desktop.ini
+Thumbs.db
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+
+# Profiles (real user data)
+Profiles/*.txt
+!Profiles/sample_expert.txt
+src/Profiles/*.txt

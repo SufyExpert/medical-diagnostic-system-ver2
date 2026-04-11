@@ -1,0 +1,104 @@
+Flu has test Rapid Influenza Diagnostic Test (RIDT)
+Cold has test Nasal Swab PCR
+COVID-19 has test RT-PCR Test
+Asthma has test Spirometry
+Diabetes has test HbA1c Blood Test
+Hypertension has test Blood Pressure Measurement
+Migraine has test CT Scan (Head)
+Pneumonia has test Chest X-Ray
+Bronchitis has test Chest X-Ray
+Tuberculosis has test Sputum Smear Microscopy
+Arthritis has test Rheumatoid Factor Blood Test
+Osteoarthritis has test X-Ray (Joints)
+Rheumatoid Arthritis has test Anti-CCP Antibody Test
+Gout has test Serum Uric Acid Test
+Anemia has test Complete Blood Count (CBC)
+Sickle Cell Anemia has test Hemoglobin Electrophoresis
+Leukemia has test Bone Marrow Biopsy
+Lymphoma has test Lymph Node Biopsy
+Hepatitis A has test IgM Anti-HAV Antibody Test
+Hepatitis B has test HBsAg Blood Test
+Hepatitis C has test HCV Antibody Test
+Cirrhosis has test Liver Function Tests (LFTs)
+Gastritis has test Endoscopy
+Peptic Ulcer has test Urea Breath Test
+Crohn's Disease has test Colonoscopy
+Ulcerative Colitis has test Sigmoidoscopy
+Irritable Bowel Syndrome has test Colonoscopy (if severe)
+Celiac Disease has test Tissue Transglutaminase (tTG) IgA Test
+Pancreatitis has test Serum Amylase Test
+Gallstones has test Abdominal Ultrasound
+Kidney Stones has test CT Urography
+Urinary Tract Infection has test Urine Culture
+Prostatitis has test Prostate-Specific Antigen (PSA) Test
+Endometriosis has test Pelvic Ultrasound
+Polycystic Ovary Syndrome has test Transvaginal Ultrasound
+Thyroiditis has test Thyroid Function Tests (TFTs)
+Hypothyroidism has test TSH Blood Test
+Hyperthyroidism has test Free T4 Blood Test
+Graves' Disease has test TSH Receptor Antibody Test
+Hashimoto's Thyroiditis has test Anti-Thyroid Antibody Test
+Lupus has test Antinuclear Antibody (ANA) Test
+Scleroderma has test Anti-Scl-70 Antibody Test
+Psoriasis has test Skin Biopsy
+Eczema has test Patch Testing
+Allergies has test Skin Prick Test
+Anaphylaxis has test Serum Tryptase Test
+Meningitis has test Lumbar Puncture
+Encephalitis has test MRI Brain Scan
+Stroke has test CT Scan (Brain)
+Heart Attack has test Electrocardiogram (ECG)
+Angina has test Stress Test
+Heart Failure has test Echocardiogram
+Atrial Fibrillation has test Holter Monitor
+Deep Vein Thrombosis has test Doppler Ultrasound
+Pulmonary Embolism has test CT Pulmonary Angiography
+Chronic Obstructive Pulmonary Disease has test Spirometry
+Emphysema has test Chest CT Scan
+Cystic Fibrosis has test Sweat Chloride Test
+Lung Cancer has test Low-Dose CT Scan
+Breast Cancer has test Mammogram
+Prostate Cancer has test Digital Rectal Exam (DRE)
+Colorectal Cancer has test Fecal Occult Blood Test (FOBT)
+Skin Cancer has test Dermoscopy
+Melanoma has test Excisional Biopsy
+Ovarian Cancer has test CA-125 Blood Test
+Cervical Cancer has test Pap Smear
+Pancreatic Cancer has test Endoscopic Ultrasound (EUS)
+Liver Cancer has test Alpha-Fetoprotein (AFP) Test
+Stomach Cancer has test Upper Endoscopy
+Esophageal Cancer has test Barium Swallow
+Bladder Cancer has test Cystoscopy
+Kidney Cancer has test Abdominal CT Scan
+Multiple Sclerosis has test MRI (Brain and Spine)
+Parkinson's Disease has test DaTSCAN Imaging
+Alzheimer's Disease has test PET Scan (Amyloid)
+Dementia has test Mini-Mental State Exam (MMSE)
+Epilepsy has test Electroencephalogram (EEG)
+Schizophrenia has test Psychiatric Evaluation
+Bipolar Disorder has test Mood Disorder Questionnaire
+Depression has test PHQ-9 Screening
+Anxiety Disorder has test GAD-7 Screening
+Obsessive-Compulsive Disorder has test Y-BOCS Assessment
+Post-Traumatic Stress Disorder has test PCL-5 Screening
+Autism Spectrum Disorder has test ADOS-2 Assessment
+Attention Deficit Hyperactivity Disorder has test Conners' Rating Scales
+Chronic Fatigue Syndrome has test Comprehensive Metabolic Panel
+Fibromyalgia has test Tender Point Examination
+Lyme Disease has test ELISA Blood Test
+Malaria has test Rapid Diagnostic Test (RDT)
+Dengue Fever has test NS1 Antigen Test
+Zika Virus has test RT-PCR Test
+West Nile Virus has test IgM Antibody Test
+Chikungunya has test IgM ELISA Test
+Typhoid Fever has test Widal Test
+Cholera has test Stool Culture
+Rabies has test Saliva PCR Test
+Tetanus has test Wound Culture
+Diphtheria has test Throat Swab Culture
+Pertussis has test Nasopharyngeal Swab PCR
+Measles has test Measles IgM Antibody Test
+Mumps has test Mumps IgM Antibody Test
+Rubella has test Rubella IgM Antibody Test
+Chickenpox has test VZV IgM Antibody Test
+Shingles has test VZV PCR Test
