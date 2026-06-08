@@ -15,7 +15,7 @@ from sklearn.preprocessing import LabelEncoder
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+CORS(app, origins="*")
 
 # ─── MONGODB ────────────────────────────────────────────────────────
 
@@ -23,17 +23,18 @@ MONGO_URI = os.getenv("MONGO_URI")
 DB_NAME   = os.getenv("DB_NAME", "medical_diagnostic")
 
 if not MONGO_URI:
-    raise ValueError("[ERROR] MONGO_URI not found in .env file")
+    print("[WARNING] MONGO_URI not found — MongoDB features will be unavailable")
+    client = None
+else:
+    client = MongoClient(MONGO_URI)
+    try:
+        client.admin.command('ping')
+        print("[OK] MongoDB connected")
+    except Exception as e:
+        print("[ERROR] MongoDB connection error:", e)
 
-client = MongoClient(MONGO_URI)
-try:
-    client.admin.command('ping')
-    print("[OK] MongoDB connected")
-except Exception as e:
-    print("[ERROR] MongoDB connection error:", e)
-
-db                = client[DB_NAME]
-users_collection  = db["users"]
+db                = client[DB_NAME] if client else None
+users_collection  = db["users"] if db else None
 
 # ─── NEO4J ──────────────────────────────────────────────────────────
 
@@ -42,9 +43,10 @@ NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 if not NEO4J_URI:
-    raise ValueError("[ERROR] NEO4J_URI not found in .env file")
-
-neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
+    print("[WARNING] NEO4J_URI not found — diagnosis features will be unavailable")
+    neo4j_driver = None
+else:
+    neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
 
 # ─── LOAD KNOWLEDGE BASE FROM NEO4J (once at startup) ───────────────
 
@@ -83,9 +85,13 @@ def load_knowledge_base():
                 })
     return tables
 
-print("[..] Loading knowledge base from Neo4j...")
-TABLES = load_knowledge_base()
-print(f"[OK] Loaded {len(TABLES)} diseases")
+try:
+    print("[..] Loading knowledge base from Neo4j...")
+    TABLES = load_knowledge_base()
+    print(f"[OK] Loaded {len(TABLES)} diseases")
+except Exception as e:
+    print(f"[ERROR] Failed to load knowledge base: {e}")
+    TABLES = {}
 
 # ─── BUILD & TRAIN RANDOM FOREST (once at startup) ──────────────────
 
@@ -125,7 +131,10 @@ def build_random_forest(tables):
 
     return rf, le, all_symptoms, symptom_index
 
-RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX = build_random_forest(TABLES)
+if TABLES:
+    RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX = build_random_forest(TABLES)
+else:
+    RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX = None, None, [], {}
 
 # ─── HELPER: RF INFERENCE ───────────────────────────────────────────
 
@@ -134,6 +143,9 @@ def rf_infer(symptoms_input, top_n=4):
     symptoms_input: list of {"name": str, "severity": int}
     Returns top_n disease names ranked by RF probability.
     """
+    if RF_MODEL is None:
+        return []
+
     vec = np.zeros(len(ALL_SYMPTOMS), dtype=float)
     for s in symptoms_input:
         idx = SYMPTOM_IDX.get(s["name"])
