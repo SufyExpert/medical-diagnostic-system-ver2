@@ -17,6 +17,17 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins="*")
 
+# ─── GLOBAL ERROR HANDLER ───────────────────────────────────────────
+# Ensures ALL unhandled exceptions return {"error": "string"} so the
+# React frontend never receives an object it can't render.
+@app.errorhandler(Exception)
+def handle_exception(e):
+    import traceback
+    traceback.print_exc()
+    code = getattr(e, 'code', 500)
+    return jsonify({"error": str(e)}), code
+
+
 
 # ─── MONGODB ────────────────────────────────────────────────────────
 
@@ -186,24 +197,27 @@ def signup():
     except ValueError:
         return jsonify({"error": "Invalid date."}), 400
 
-    if users_collection.find_one({"username": username}):
-        return jsonify({"error": "Username already exists."}), 409
+    try:
+        if users_collection.find_one({"username": username}):
+            return jsonify({"error": "Username already exists."}), 409
 
-    today = datetime.today()
-    age   = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
-    hashed_pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+        today = datetime.today()
+        age   = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+        hashed_pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
-    users_collection.insert_one({
-        "username":   username,
-        "password":   hashed_pw,
-        "full_name":  full_name,
-        "dob":        dob,
-        "contact":    contact,
-        "age":        age,
-        "diseases":   [],
-        "created_at": datetime.utcnow()
-    })
-    return jsonify({"message": "Account created successfully."}), 201
+        users_collection.insert_one({
+            "username":   username,
+            "password":   hashed_pw,
+            "full_name":  full_name,
+            "dob":        dob,
+            "contact":    contact,
+            "age":        age,
+            "diseases":   [],
+            "created_at": datetime.utcnow()
+        })
+        return jsonify({"message": "Account created successfully."}), 201
+    except Exception as e:
+        return jsonify({"error": f"Database error: {str(e)}"}), 500
 
 
 @app.route("/api/signin", methods=["POST"])
@@ -217,21 +231,24 @@ def signin():
     if not username or not password:
         return jsonify({"error": "Username and password required."}), 400
 
-    user = users_collection.find_one({"username": username})
-    if not user or not bcrypt.checkpw(password.encode(), user["password"].encode()):
-        return jsonify({"error": "Invalid credentials."}), 401
+    try:
+        user = users_collection.find_one({"username": username})
+        if not user or not bcrypt.checkpw(password.encode(), user["password"].encode()):
+            return jsonify({"error": "Invalid credentials."}), 401
 
-    return jsonify({
-        "message": "Signed in successfully.",
-        "user": {
-            "username":  user["username"],
-            "full_name": user["full_name"],
-            "dob":       user["dob"],
-            "contact":   user["contact"],
-            "age":       user["age"],
-            "diseases":  user.get("diseases", [])
-        }
-    }), 200
+        return jsonify({
+            "message": "Signed in successfully.",
+            "user": {
+                "username":  user["username"],
+                "full_name": user["full_name"],
+                "dob":       user["dob"],
+                "contact":   user["contact"],
+                "age":       user["age"],
+                "diseases":  user.get("diseases", [])
+            }
+        }), 200
+    except Exception as e:
+        return jsonify({"error": f"Database error: {str(e)}"}), 500
 
 # ─── PROFILE ROUTES ─────────────────────────────────────────────────
 

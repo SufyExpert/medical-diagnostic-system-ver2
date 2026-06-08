@@ -31,7 +31,13 @@ export default function SignIn() {
       login(res.data.user);
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.error || 'Sign in failed. Please check your credentials.');
+      const data = err.response?.data;
+      const msg = typeof data?.error === 'string'
+        ? data.error
+        : typeof data?.message === 'string'
+        ? data.message
+        : 'Sign in failed. Please check your credentials.';
+      setError(msg);
     } finally {
       setLoading(false);
     }

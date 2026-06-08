@@ -29,7 +29,13 @@ export default function SignUp() {
       setSuccess('Account created successfully! Redirecting to sign in...');
       setTimeout(() => navigate('/signin'), 1800);
     } catch (err) {
-      setError(err.response?.data?.error || 'Sign up failed. Please try again.');
+      const data = err.response?.data;
+      const msg = typeof data?.error === 'string'
+        ? data.error
+        : typeof data?.message === 'string'
+        ? data.message
+        : 'Sign up failed. Please try again.';
+      setError(msg);
     } finally {
       setLoading(false);
     }
