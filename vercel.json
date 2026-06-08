@@ -2,11 +2,12 @@
   "version": 2,
   "experimentalServices": {
     "frontend": {
-      "root": "frontend",
+      "entrypoint": "frontend",
+      "framework": "create-react-app",
       "routePrefix": "/"
     },
     "backend": {
-      "root": "backend",
+      "entrypoint": "backend/app.py",
       "routePrefix": "/_/backend"
     }
   }
