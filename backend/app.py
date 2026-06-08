@@ -17,6 +17,19 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins="*")
 
+class PrefixMiddleware(object):
+    def __init__(self, app, prefix=''):
+        self.app = app
+        self.prefix = prefix
+
+    def __call__(self, environ, start_response):
+        if environ['PATH_INFO'].startswith(self.prefix):
+            environ['PATH_INFO'] = environ['PATH_INFO'][len(self.prefix):]
+            environ['SCRIPT_NAME'] = self.prefix
+        return self.app(environ, start_response)
+
+app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='/_/backend')
+
 # ─── MONGODB ────────────────────────────────────────────────────────
 
 MONGO_URI = os.getenv("MONGO_URI")
@@ -160,6 +173,8 @@ def rf_infer(symptoms_input, top_n=4):
 
 @app.route("/api/signup", methods=["POST"])
 def signup():
+    if users_collection is None:
+        return jsonify({"error": "Database connection not available. Please verify MONGO_URI in Vercel settings."}), 503
     data      = request.json
     username  = data.get("username",  "").strip()
     password  = data.get("password",  "")
@@ -205,6 +220,8 @@ def signup():
 
 @app.route("/api/signin", methods=["POST"])
 def signin():
+    if users_collection is None:
+        return jsonify({"error": "Database connection not available. Please verify MONGO_URI in Vercel settings."}), 503
     data     = request.json
     username = data.get("username", "").strip()
     password = data.get("password", "")
@@ -232,6 +249,8 @@ def signin():
 
 @app.route("/api/profile/<username>", methods=["GET"])
 def get_profile(username):
+    if users_collection is None:
+        return jsonify({"error": "Database connection not available. Please verify MONGO_URI in Vercel settings."}), 503
     user = users_collection.find_one({"username": username}, {"_id": 0, "password": 0})
     if not user:
         return jsonify({"error": "User not found."}), 404
@@ -240,6 +259,8 @@ def get_profile(username):
 
 @app.route("/api/profile/<username>/disease", methods=["POST"])
 def add_disease(username):
+    if users_collection is None:
+        return jsonify({"error": "Database connection not available. Please verify MONGO_URI in Vercel settings."}), 503
     disease = request.json.get("disease")
     if not disease:
         return jsonify({"error": "Disease required."}), 400
@@ -252,6 +273,8 @@ def add_disease(username):
 
 @app.route("/api/profile/<username>/disease/cure", methods=["PUT"])
 def cure_disease(username):
+    if users_collection is None:
+        return jsonify({"error": "Database connection not available. Please verify MONGO_URI in Vercel settings."}), 503
     disease = request.json.get("disease")
     users_collection.update_one(
         {"username": username, "diseases.name": disease},
@@ -262,6 +285,8 @@ def cure_disease(username):
 
 @app.route("/api/profile/<username>/disease", methods=["DELETE"])
 def delete_disease(username):
+    if users_collection is None:
+        return jsonify({"error": "Database connection not available. Please verify MONGO_URI in Vercel settings."}), 503
     disease = request.json.get("disease")
     users_collection.update_one(
         {"username": username},
@@ -273,6 +298,8 @@ def delete_disease(username):
 
 @app.route("/api/symptoms", methods=["GET"])
 def get_symptoms():
+    if neo4j_driver is None:
+        return jsonify({"error": "Neo4j database connection not available. Please verify NEO4J_URI in Vercel settings."}), 503
     with neo4j_driver.session() as session:
         result   = session.run("MATCH (s:Symptom) RETURN s.name AS name ORDER BY s.name")
         symptoms = [r["name"] for r in result]
@@ -283,6 +310,8 @@ def get_symptoms():
 
 @app.route("/api/diagnose/step1", methods=["POST"])
 def diagnose_step1():
+    if RF_MODEL is None or not TABLES:
+        return jsonify({"error": "Knowledge base or ML model not loaded. Please verify NEO4J connection settings in Vercel."}), 503
     data           = request.json
     symptoms_input = data.get("symptoms", [])   # [{"name":..., "severity":...}]
 
@@ -313,6 +342,8 @@ def diagnose_step1():
 
 @app.route("/api/diagnose/step2", methods=["POST"])
 def diagnose_step2():
+    if RF_MODEL is None or not TABLES:
+        return jsonify({"error": "Knowledge base or ML model not loaded. Please verify NEO4J connection settings in Vercel."}), 503
     data           = request.json
     symptoms_input = data.get("symptoms", [])   # all symptoms combined
     top4           = data.get("top4",     [])   # the 4 from step 1
@@ -345,6 +376,8 @@ def diagnose_step2():
 @app.route("/api/disease/<disease_name>", methods=["GET"])
 def get_disease_detail(disease_name):
     """Return medicines and tests for a specific disease (used by Profile detail modal)."""
+    if not TABLES:
+        return jsonify({"error": "Knowledge base not loaded. Please verify NEO4J connection settings in Vercel."}), 503
     info = TABLES.get(disease_name)
     if not info:
         return jsonify({"error": "Disease not found"}), 404
