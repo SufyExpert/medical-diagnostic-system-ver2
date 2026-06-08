@@ -1,5 +1,11 @@
 from neo4j import GraphDatabase
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import os
+from dotenv import load_dotenv
+
+# Load credentials from backend/.env if present
+dotenv_path = os.path.join(os.path.dirname(__file__), '../backend/.env')
+load_dotenv(dotenv_path)
 
 class Neo4jMedicineLoader:
     def __init__(self, uri, user, password):
@@ -103,10 +109,13 @@ def parse_knowledge_file(file_path):
         return []
 
 def main():
-    uri = "neo4j+ssc://5830d6bf.databases.neo4j.io"
-    user = "5830d6bf"
-    password = "GPrI0zK7MaGw0uczDSPTjxCtef4LgMUJ4BM_6BUq4Ko"
-    file_path = "../data/knowledge_medicines.txt"
+    uri = os.getenv("NEO4J_URI", "neo4j+ssc://673dc2cb.databases.neo4j.io")
+    if uri.startswith("neo4j+s://"):
+        uri = uri.replace("neo4j+s://", "neo4j+ssc://")
+
+    user = os.getenv("NEO4J_USERNAME", "673dc2cb")
+    password = os.getenv("NEO4J_PASSWORD", "PkWvQnvT-rrp5TQ_ZiM73Ht-w4prxOc6P9lGZ4Induk")
+    file_path = os.path.join(os.path.dirname(__file__), "../data/knowledge_medicines.txt")
 
     try:
         loader = Neo4jMedicineLoader(uri, user, password)

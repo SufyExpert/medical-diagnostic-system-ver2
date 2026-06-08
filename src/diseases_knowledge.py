@@ -1,9 +1,19 @@
 from neo4j import GraphDatabase
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import os
+from dotenv import load_dotenv
 
-uri = "neo4j+ssc://5830d6bf.databases.neo4j.io"
-username = "5830d6bf"
-password = "GPrI0zK7MaGw0uczDSPTjxCtef4LgMUJ4BM_6BUq4Ko"
+# Load credentials from backend/.env if present
+dotenv_path = os.path.join(os.path.dirname(__file__), '../backend/.env')
+load_dotenv(dotenv_path)
+
+uri = os.getenv("NEO4J_URI", "neo4j+ssc://673dc2cb.databases.neo4j.io")
+# Always ensure we use +ssc locally if neo4j+s is provided to avoid SSL handshake issues
+if uri.startswith("neo4j+s://"):
+    uri = uri.replace("neo4j+s://", "neo4j+ssc://")
+
+username = os.getenv("NEO4J_USERNAME", "673dc2cb")
+password = os.getenv("NEO4J_PASSWORD", "PkWvQnvT-rrp5TQ_ZiM73Ht-w4prxOc6P9lGZ4Induk")
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 def create_disease_nodes_and_relationships(tx, disease, symptom_weights_probs):
@@ -69,6 +79,7 @@ try:
     with driver.session() as session:
         session.run("MATCH (n) RETURN n LIMIT 1")
     print("Connected successfully")
-    process_knowledge_file("../data/knowledge.txt")
+    data_path = os.path.join(os.path.dirname(__file__), "../data/knowledge.txt")
+    process_knowledge_file(data_path)
 except Exception as e:
     print("Connection failed:", str(e))

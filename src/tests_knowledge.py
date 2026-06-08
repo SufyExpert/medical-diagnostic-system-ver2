@@ -1,10 +1,18 @@
 from neo4j import GraphDatabase
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
+from dotenv import load_dotenv
 
-uri = "neo4j+ssc://5830d6bf.databases.neo4j.io"
-username = "5830d6bf"
-password = "GPrI0zK7MaGw0uczDSPTjxCtef4LgMUJ4BM_6BUq4Ko"
+# Load credentials from backend/.env if present
+dotenv_path = os.path.join(os.path.dirname(__file__), '../backend/.env')
+load_dotenv(dotenv_path)
+
+uri = os.getenv("NEO4J_URI", "neo4j+ssc://673dc2cb.databases.neo4j.io")
+if uri.startswith("neo4j+s://"):
+    uri = uri.replace("neo4j+s://", "neo4j+ssc://")
+
+username = os.getenv("NEO4J_USERNAME", "673dc2cb")
+password = os.getenv("NEO4J_PASSWORD", "PkWvQnvT-rrp5TQ_ZiM73Ht-w4prxOc6P9lGZ4Induk")
 
 
 class Neo4jUploader:
@@ -61,4 +69,5 @@ class Neo4jUploader:
 
 if __name__ == "__main__":
     uploader = Neo4jUploader(uri, username, password)
-    uploader.run("../data/knowledge_tests.txt")
+    data_path = os.path.join(os.path.dirname(__file__), "../data/knowledge_tests.txt")
+    uploader.run(data_path)
