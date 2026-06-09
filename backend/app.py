@@ -43,7 +43,7 @@ else:
         print("[ERROR] MongoDB connection error:", e)
 
 db                = client[DB_NAME] if client else None
-users_collection  = db["users"] if db else None
+users_collection  = db["users"] if db is not None else None
 
 # ─── NEO4J ──────────────────────────────────────────────────────────
 
