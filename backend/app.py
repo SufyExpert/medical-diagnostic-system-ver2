@@ -60,7 +60,7 @@ if not NEO4J_URI:
 else:
     neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
 
-# ─── LOAD KNOWLEDGE BASE FROM NEO4J (once at startup) ───────────────
+# ─── LOAD KNOWLEDGE BASE FROM NEO4J (lazy — loaded on first diagnosis request) ───
 
 def load_knowledge_base():
     with neo4j_driver.session() as session:
@@ -97,15 +97,31 @@ def load_knowledge_base():
                 })
     return tables
 
-try:
-    print("[..] Loading knowledge base from Neo4j...")
-    TABLES = load_knowledge_base()
-    print(f"[OK] Loaded {len(TABLES)} diseases")
-except Exception as e:
-    print(f"[ERROR] Failed to load knowledge base: {e}")
-    TABLES = {}
+# Lazy globals — only populated on first call to ensure_model_loaded()
+TABLES       = None
+RF_MODEL     = None
+LABEL_ENC    = None
+ALL_SYMPTOMS = []
+SYMPTOM_IDX  = {}
 
-# ─── BUILD & TRAIN RANDOM FOREST (once at startup) ──────────────────
+def ensure_model_loaded():
+    """Load Neo4j knowledge base and train Random Forest on first diagnosis request."""
+    global TABLES, RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX
+    if TABLES is not None:
+        return
+    if neo4j_driver is None:
+        TABLES = {}
+        return
+    try:
+        print("[..] Loading knowledge base from Neo4j (lazy)...")
+        TABLES = load_knowledge_base()
+        print(f"[OK] Loaded {len(TABLES)} diseases")
+        RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX = build_random_forest(TABLES)
+    except Exception as e:
+        print(f"[ERROR] Failed to load knowledge base: {e}")
+        TABLES = {}
+
+# ─── BUILD & TRAIN RANDOM FOREST ────────────────────────────────────
 
 def build_random_forest(tables):
     all_symptoms = sorted({s for d in tables.values() for s in d["symptoms"]})
@@ -143,10 +159,7 @@ def build_random_forest(tables):
 
     return rf, le, all_symptoms, symptom_index
 
-if TABLES:
-    RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX = build_random_forest(TABLES)
-else:
-    RF_MODEL, LABEL_ENC, ALL_SYMPTOMS, SYMPTOM_IDX = None, None, [], {}
+# RF model is built lazily inside ensure_model_loaded() on first diagnosis request
 
 # ─── HELPER: RF INFERENCE ───────────────────────────────────────────
 
@@ -315,6 +328,7 @@ def get_symptoms():
 
 @app.route("/api/diagnose/step1", methods=["POST"])
 def diagnose_step1():
+    ensure_model_loaded()
     if RF_MODEL is None or not TABLES:
         return jsonify({"error": "Knowledge base or ML model not loaded. Please verify NEO4J connection settings in Vercel."}), 503
     data           = request.json
@@ -347,6 +361,7 @@ def diagnose_step1():
 
 @app.route("/api/diagnose/step2", methods=["POST"])
 def diagnose_step2():
+    ensure_model_loaded()
     if RF_MODEL is None or not TABLES:
         return jsonify({"error": "Knowledge base or ML model not loaded. Please verify NEO4J connection settings in Vercel."}), 503
     data           = request.json
@@ -380,6 +395,7 @@ def diagnose_step2():
 
 @app.route("/api/disease/<disease_name>", methods=["GET"])
 def get_disease_detail(disease_name):
+    ensure_model_loaded()
     """Return medicines and tests for a specific disease (used by Profile detail modal)."""
     if not TABLES:
         return jsonify({"error": "Knowledge base not loaded. Please verify NEO4J connection settings in Vercel."}), 503
