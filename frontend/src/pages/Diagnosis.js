@@ -19,7 +19,7 @@ function Toast({ message, type, onClose }) {
   const colors = {
     success: { bg: '#e8f8f3', border: '#1a9e7a', text: '#0d5e46' },
     warning: { bg: '#fef6e8', border: '#d4861b', text: '#7a4d0a' },
-    error:   { bg: '#fdf1ef', border: '#C46B5E', text: '#7a2e27' },
+    error: { bg: '#fdf1ef', border: '#C46B5E', text: '#7a2e27' },
   };
   const c = colors[type] || colors.success;
 
@@ -88,7 +88,7 @@ function StepIndicator({ step }) {
     <div className="step-indicator">
       {steps.map((label, i) => {
         const num = i + 1;
-        const isDone   = step > num;
+        const isDone = step > num;
         const isActive = step === num;
         return (
           <React.Fragment key={label}>
@@ -117,7 +117,7 @@ function StepIndicator({ step }) {
 // the previously selected value (on blur / clear).
 function SymptomPicker({ label, allSymptoms, selected, onSelect, excluded }) {
   const [query, setQuery] = useState('');
-  const [open, setOpen]   = useState(false);
+  const [open, setOpen] = useState(false);
   const ref = useRef();
 
   // Keep the input text in sync when selected changes from outside (e.g. reset)
@@ -181,22 +181,22 @@ function SeverityBadge({ value }) {
 
 // ─── Main Diagnosis component ─────────────────────────────────────────
 export default function Diagnosis() {
-  const { user }   = useAuth();
-  const navigate   = useNavigate();
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   const [allSymptoms, setAllSymptoms] = useState([]);
-  const [s1, setS1]     = useState(''); const [sev1, setSev1] = useState(2);
-  const [s2, setS2]     = useState(''); const [sev2, setSev2] = useState(2);
+  const [s1, setS1] = useState(''); const [sev1, setSev1] = useState(2);
+  const [s2, setS2] = useState(''); const [sev2, setSev2] = useState(2);
 
-  const [step, setStep]                         = useState(1);
-  const [top4, setTop4]                         = useState([]);
+  const [step, setStep] = useState(1);
+  const [top4, setTop4] = useState([]);
   const [additionalSymptoms, setAdditionalSymptoms] = useState([]);
-  const [selectedExtras, setSelectedExtras]     = useState({});
-  const [finalResult, setFinalResult]           = useState(null);
+  const [selectedExtras, setSelectedExtras] = useState({});
+  const [finalResult, setFinalResult] = useState(null);
 
-  const [loading, setLoading]         = useState(false);
-  const [error, setError]             = useState('');
-  const [toast, setToast]             = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [toast, setToast] = useState(null);
   const [confirmSave, setConfirmSave] = useState(false);
   const [savedDiseases, setSavedDiseases] = useState([]);
 
@@ -236,8 +236,8 @@ export default function Diagnosis() {
         });
       };
 
-      const adultParts   = getSegments(med.adult_dosage);
-      const childParts   = getSegments(med.child_dosage);
+      const adultParts = getSegments(med.adult_dosage);
+      const childParts = getSegments(med.child_dosage);
       const elderlyParts = getSegments(med.elderly_dosage);
 
       const maxDrugs = Math.max(adultParts.length, childParts.length, elderlyParts.length);
@@ -246,8 +246,8 @@ export default function Diagnosis() {
       for (let i = 0; i < maxDrugs; i++) {
         alignedResults.push({
           displayName: adultParts[i]?.name || childParts[i]?.name || elderlyParts[i]?.name || med.name,
-          adult:   adultParts[i]?.dosage   || 'N/A',
-          child:   childParts[i]?.dosage   || 'N/A',
+          adult: adultParts[i]?.dosage || 'N/A',
+          child: childParts[i]?.dosage || 'N/A',
           elderly: elderlyParts[i]?.dosage || 'N/A',
           note: med.note
         });
@@ -256,7 +256,7 @@ export default function Diagnosis() {
     });
 
     const uniqueMeds = [];
-    const seenNames  = new Set();
+    const seenNames = new Set();
     for (const med of allParsedMeds) {
       const key = med.displayName?.toLowerCase().trim();
       if (key && !seenNames.has(key)) {
@@ -268,8 +268,12 @@ export default function Diagnosis() {
   };
 
   useEffect(() => {
-    axios.get('/api/symptoms').then(r => setAllSymptoms(r.data)).catch(() => {});
+    axios.get('/api/symptoms').then(r => setAllSymptoms(r.data)).catch(() => { });
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [step]);
 
   useEffect(() => {
     if (user?.username) {
@@ -278,7 +282,7 @@ export default function Diagnosis() {
           const names = (r.data.diseases || []).map(d => d.name);
           setSavedDiseases(names);
         })
-        .catch(() => {});
+        .catch(() => { });
     }
   }, [user]);
 
@@ -296,7 +300,7 @@ export default function Diagnosis() {
       setSelectedExtras({});
       setStep(2);
     } catch { setError('Diagnosis failed. Please try again.'); }
-    finally   { setLoading(false); }
+    finally { setLoading(false); }
   };
 
   const toggleExtra = (symptom) => {
@@ -324,7 +328,7 @@ export default function Diagnosis() {
       setFinalResult(res.data);
       setStep(3);
     } catch { setError('Refinement failed. Please try again.'); }
-    finally   { setLoading(false); }
+    finally { setLoading(false); }
   };
 
   const handleSaveClick = () => {
@@ -375,7 +379,7 @@ export default function Diagnosis() {
       `}</style>
 
       <span className="back-link" onClick={() => navigate('/dashboard')}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
         Back to Dashboard
       </span>
       <div className="diagnosis-container">

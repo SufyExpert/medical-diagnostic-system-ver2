@@ -18,18 +18,18 @@ function PrivateRoute({ children }) {
 
 export default function App() {
   const [user, setUser] = useState(() => {
-    const saved = sessionStorage.getItem('mds_user');
+    const saved = localStorage.getItem('mds_user');
     return saved ? JSON.parse(saved) : null;
   });
 
   const login = (userData) => {
     setUser(userData);
-    sessionStorage.setItem('mds_user', JSON.stringify(userData));
+    localStorage.setItem('mds_user', JSON.stringify(userData));
   };
 
   const logout = () => {
     setUser(null);
-    sessionStorage.removeItem('mds_user');
+    localStorage.removeItem('mds_user');
   };
 
   return (
