@@ -4,7 +4,6 @@ from pymongo import MongoClient
 from datetime import datetime
 import os
 import re
-import math
 import numpy as np
 import bcrypt
 from dotenv import load_dotenv

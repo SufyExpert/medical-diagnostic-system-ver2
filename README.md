@@ -56,8 +56,10 @@ At startup, the entire graph is loaded into memory for fast inference.
 - Output: top-N ranked disease predictions with confidence scores.
 - Training uses data augmentation (noise injection) for better generalisation.
 
-### Bayesian-Style Scoring
-Alongside the RF model, a probabilistic symptom-match scorer ranks diseases by weighted symptom overlap and co-occurrence probability — results from both approaches are blended.
+### Two-Step Diagnosis Flow
+Diagnosis runs in two RF passes rather than one:
+1. **Step 1** — the user's initial symptoms are vectorized and scored against all diseases; the top 4 candidates are returned along with the symptoms most discriminating between them (weighted by how many of the 4 candidates share each symptom).
+2. **Step 2** — the user confirms which additional symptoms apply, the full symptom set is re-scored, and the final prediction is the highest-probability disease among the original top 4 (not re-opened to the full disease set).
 
 ### Age-Aware Dosage
 Medicine recommendations automatically select the correct dosage tier: **child** (< 12), **adult** (12–64), or **elderly** (65+) based on the user's profile age.
@@ -71,8 +73,7 @@ medical-diagnostic-system-ver2/
 │
 ├── backend/
 │   ├── app.py              # Flask server — all API routes + ML logic
-│   ├── requirements.txt    # Python dependencies
-│   └── .env                # MONGO_URI, NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD
+│   └── .env                # MONGO_URI, NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD (not tracked)
 │
 ├── frontend/
 │   ├── public/
@@ -103,7 +104,10 @@ medical-diagnostic-system-ver2/
 │   └── model_evaluation.py
 │
 ├── screenshots/
-├── requirements.txt             # Root-level Python deps
+├── api/
+│   └── index.py                 # Vercel serverless entry point — imports backend/app.py
+├── requirements.txt              # Python deps (used for both local backend and Vercel build)
+├── vercel.json                   # Vercel build/routing config
 └── Model_Selection_Report.md    # ML model analysis report
 ```
 
@@ -111,14 +115,18 @@ medical-diagnostic-system-ver2/
 
 ## 🔌 API Endpoints (Flask)
 
-| Method | Route              | Description                        |
-|--------|--------------------|------------------------------------|
-| POST   | `/api/signup`      | Register a new user (bcrypt hash)  |
-| POST   | `/api/signin`      | Authenticate user                  |
-| GET    | `/api/profile`     | Get user profile                   |
-| PUT    | `/api/profile`     | Update profile fields              |
-| POST   | `/api/diagnose`    | Run diagnosis on submitted symptoms|
-| GET    | `/api/history`     | Retrieve past diagnosis sessions   |
+| Method | Route                                   | Description                                  |
+|--------|------------------------------------------|-----------------------------------------------|
+| POST   | `/api/signup`                            | Register a new user (bcrypt hash)             |
+| POST   | `/api/signin`                            | Authenticate user                             |
+| GET    | `/api/profile/<username>`                | Get user profile                              |
+| GET    | `/api/symptoms`                          | List all known symptoms (from Neo4j)          |
+| POST   | `/api/diagnose/step1`                    | Score initial symptoms, return top-4 diseases + discriminating symptoms |
+| POST   | `/api/diagnose/step2`                    | Re-score with full symptom set, return final diagnosis + medicines/tests |
+| GET    | `/api/disease/<disease_name>`            | Get medicines and tests for a specific disease |
+| POST   | `/api/profile/<username>/disease`        | Add a diagnosed disease to the user's profile |
+| PUT    | `/api/profile/<username>/disease/cure`   | Mark a disease as cured                       |
+| DELETE | `/api/profile/<username>/disease`        | Remove a disease from the user's profile      |
 
 ---
 
@@ -126,9 +134,9 @@ medical-diagnostic-system-ver2/
 
 ### Backend
 ```bash
-cd backend
 pip install -r requirements.txt
-# Add .env with MONGO_URI, NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD
+# Create backend/.env with MONGO_URI, NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD
+cd backend
 python app.py
 ```
 
@@ -139,9 +147,23 @@ npm install
 npm start
 ```
 
+### Knowledge base setup (first-time only)
+The Neo4j graph is populated from the plain-text files in `data/` via the scripts in `src/`. Run once, in order, with `backend/.env` populated:
+```bash
+python src/diseases_knowledge.py     # loads data/knowledge.txt      → Disease/Symptom nodes
+python src/medicines_knowledge.py    # loads data/knowledge_medicines.txt → Medicine nodes
+python src/tests_knowledge.py        # loads data/knowledge_tests.txt → Test nodes
+```
+
 ---
 
-## 🔑 Environment Variables (`.env`)
+## ☁️ Deployment (Vercel)
+
+The app deploys as a single Vercel project: the React build is served as static output, and `api/index.py` is registered as a Python serverless function that imports and re-exports the Flask app from `backend/app.py`. `vercel.json` routes all `/api/*` requests to that function and everything else to the static frontend build. Set `MONGO_URI`, `DB_NAME`, `NEO4J_URI`, `NEO4J_USERNAME`, and `NEO4J_PASSWORD` as Vercel project environment variables — the serverless function reads them the same way `app.py` does locally.
+
+---
+
+## 🔑 Environment Variables (`backend/.env`)
 
 ```
 MONGO_URI=mongodb+srv://...
@@ -150,3 +172,5 @@ NEO4J_URI=neo4j+ssc://...
 NEO4J_USERNAME=...
 NEO4J_PASSWORD=...
 ```
+
+None of these have defaults in code — the app and knowledge-base scripts will refuse to start without them.

@@ -7,13 +7,19 @@ from dotenv import load_dotenv
 dotenv_path = os.path.join(os.path.dirname(__file__), '../backend/.env')
 load_dotenv(dotenv_path)
 
-uri = os.getenv("NEO4J_URI", "neo4j+ssc://673dc2cb.databases.neo4j.io")
+uri = os.getenv("NEO4J_URI")
+username = os.getenv("NEO4J_USERNAME")
+password = os.getenv("NEO4J_PASSWORD")
+
+if not all([uri, username, password]):
+    raise RuntimeError(
+        "NEO4J_URI, NEO4J_USERNAME, and NEO4J_PASSWORD must be set in backend/.env"
+    )
+
 # Always ensure we use +ssc locally if neo4j+s is provided to avoid SSL handshake issues
 if uri.startswith("neo4j+s://"):
     uri = uri.replace("neo4j+s://", "neo4j+ssc://")
 
-username = os.getenv("NEO4J_USERNAME", "673dc2cb")
-password = os.getenv("NEO4J_PASSWORD", "PkWvQnvT-rrp5TQ_ZiM73Ht-w4prxOc6P9lGZ4Induk")
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 def create_disease_nodes_and_relationships(tx, disease, symptom_weights_probs):

@@ -109,12 +109,17 @@ def parse_knowledge_file(file_path):
         return []
 
 def main():
-    uri = os.getenv("NEO4J_URI", "neo4j+ssc://673dc2cb.databases.neo4j.io")
+    uri = os.getenv("NEO4J_URI")
+    user = os.getenv("NEO4J_USERNAME")
+    password = os.getenv("NEO4J_PASSWORD")
+
+    if not all([uri, user, password]):
+        print("Error: NEO4J_URI, NEO4J_USERNAME, and NEO4J_PASSWORD must be set in backend/.env")
+        return
+
     if uri.startswith("neo4j+s://"):
         uri = uri.replace("neo4j+s://", "neo4j+ssc://")
 
-    user = os.getenv("NEO4J_USERNAME", "673dc2cb")
-    password = os.getenv("NEO4J_PASSWORD", "PkWvQnvT-rrp5TQ_ZiM73Ht-w4prxOc6P9lGZ4Induk")
     file_path = os.path.join(os.path.dirname(__file__), "../data/knowledge_medicines.txt")
 
     try:
